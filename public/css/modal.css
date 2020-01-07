@@ -1,0 +1,1365 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 40; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    box-shadow: none !important;
+    padding-top: 5%;
+}
+
+body.modal-open {
+    overflow: visible;
+}
+
+/* Modal Header */
+.modal-header {
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+/* Modal Body */
+.modal-body {
+    background-color: white;
+    padding: 2px 16px;
+    text-align: center;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    position: relative;
+    margin: auto;
+    vertical-align: middle;
+    padding: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    box-shadow: none !important;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border: 0px;
+}
+.modal-content-small {
+    width: 28%;
+    min-width: 400px;
+    margin: 20px auto;
+    background-color: transparent;
+}
+.account-modal-content {
+    position: relative;
+    margin: auto;
+    vertical-align: middle;
+    padding: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    box-shadow: none !important;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border: 0px;
+    display: flex;
+}
+.account-modal-content-small {
+    width: 28%;
+    min-width: 400px;
+    margin: auto;
+    background-color: transparent;
+}
+.account-modal-content-title {
+    color: #066FB7;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin: 35px 0px;
+}
+.accounttypediv {
+    height: 50px;
+    display: table;
+    width: 90%;
+    margin: 15px auto 40px auto;
+}
+.accounttypedivsmall {
+    display: table-cell;
+    vertical-align: middle;
+}
+.accounttypedivcontents {
+    cursor: pointer;
+    display: inline-block;
+    width: 47%;
+    border-radius: 3px;
+    color: #585858;
+    height: 200px;
+    padding: 5px 5px;
+    font-size: 20px;
+}
+
+.accounttypedivcontents > img{
+    margin-right: 5px;
+}
+.accounttypedivcontents > p{
+    padding-bottom: 15px;
+}
+.accountdifferencediv {
+    width: 65%;
+    height: 30px;
+    margin: 0px auto 10px auto;
+}
+.accountdifference {
+    display: table;
+    margin: 0px auto 0px auto;
+}
+.accountdifference > a {
+    color: #0572B9;
+    text-decoration: underline;
+}
+
+.tellus-modal-content{
+    position: relative;
+    margin: auto;
+    vertical-align: middle;
+    padding: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    box-shadow: none !important;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border: 0px;
+}
+.tellus-modal-content-small{
+    width: 60%;
+    min-width: 900px;
+    display: block;
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: white;
+}
+/* Unauthorized popup */
+.tellus-modal-content-small.unauthorized {
+    width: 30%;
+    min-width: 700px;
+}
+.modal-body#tellusunauthorizedbody .tellus-modal-content-title {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 80px;
+}
+.modal-body#tellusunauthorizedbody .getaccessquote {
+    display: inline-block;
+    width: 100%;
+    font-size: 15px;
+}
+.modal-body#tellusunauthorizedbody .startnowdiv {
+    display: inline-block;
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.modal-body#tellusunauthorizedbody .startnowbutton {
+    background-color: #018FFF;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    border-color: #018FFF !important;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.modal-body#tellusunauthorizedbody .startnowbutton:hover, .modal-body#tellusunauthorizedbody .startnowbutton:focus {
+    color: #3E92CF;
+    background-color: white;
+}
+    
+.modal-body#tellusunauthorizedbody .closediv {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+}
+.modal-body#tellusunauthorizedbody .closebutton {
+    color: #018FFF;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.tellus-modal-content-title{
+    color: #066FB7;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    margin: 35px 20px 20px 20px;
+    text-align: left;
+}
+.tellus-modal-content-progress {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 37px;
+}
+.tellusdiv, .tellus2div, .tellus3div {
+    display: block;
+    height: 320px;
+    text-align: left;
+    margin: 40px 20px 0px 20px;
+}
+.tellusdivsmall, .tellus2divsmall {
+    display: inline-block;
+    height: 100%;
+    width: 33%;
+    vertical-align: top;
+}
+.tellusdivsmall.right {
+    width: 66%;
+    padding-left: 20px;
+}
+.tellus3divsmall {
+    display: table;
+    width: 100%;
+}
+.tellus3divtitle, .tellus3divdesc {
+    display: table-cell;
+}
+.customizedcoursesarea {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.customizedcoursesarea > li {
+    display: inline-block;
+    width: 49%;
+    margin: 5px 0px;
+    vertical-align: top;
+}
+
+.modaldatepicker {
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.modaldatepicker[readonly] {
+    cursor: pointer;
+    background-color: white;
+}
+.datepicker {
+    width: 320px;
+    min-width: 300px;
+    height: 290px;
+    min-height: 250px;
+}
+.table-condensed {
+    width: 310px;
+    min-width: 290px;
+    height: 280px;
+    min-height: 240px;
+}
+.tellusdivtitle, .tellus2divtitle, .tellus2divdesc {
+    display: inline-block;
+    width: 100%;
+}
+.tellusdivtitle > label {
+    width: 100%;
+}
+.tellusdivtitle p.required:after {
+    content: '*';
+    color: red;
+    position: relative;
+    left: 5px;
+    top: -5px;
+}
+.tellusdivtitle p {
+    margin: 0px;
+}
+.tellusnextdiv {
+    width: 100%;
+    height: 45px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.tellusnext {
+    margin: 0px auto 0px auto;
+    background-color: #018FFF;
+    border: 2px solid #018FFF;
+    border-radius: 2px;
+    width: 10%;
+    height: 100%;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;  
+    display: table;
+    border: none;
+}
+.tellusnext > button {
+    color: white;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
+.tellusnext > button:disabled {
+    opacity: 0.7;
+    
+    background-color: lightgray;
+}
+.tellusnextleft, .tellusnextdiv>.text {
+    float:left;
+    margin-left: 20px;
+}
+.tellusnextdiv>.text {
+    color: gray;
+}
+.tellusnextright {
+    float: right;
+    margin-right: 20px;
+}
+.tellus3coursedate {
+    display: table-row;
+    height: 50px;
+}
+.tellus3coursedate > p{
+    margin: 0px;
+    margin-bottom: 20px;
+}
+.delete-pdf, .delete-proposal-pdf {
+  position: absolute;
+  right: 66%;
+  top: 63%;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.delete-pdf:hover, .delete-proposal-pdf:hover {
+  opacity: 1;
+}
+.delete-pdf:before, .delete-proposal-pdf:before, .delete-pdf:after, .delete-proposal-pdf:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.delete-pdf:before, .delete-proposal-pdf:before {
+  transform: rotate(45deg);
+}
+.delete-pdf:after, .delete-proposal-pdf:after {
+  transform: rotate(-45deg);
+}
+.requestcustomizedcoursediv {
+    text-align: center;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    margin-top: 10px;
+    min-height: 110px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.requestcustomizedcoursesmall{
+    display: flex;
+    align-items: center;
+}
+
+#requestcustomizedcoursespdf {
+    max-height: 80px;
+    width: auto;
+}
+#request-course-form input[type="radio"] {
+    display: none;
+}
+#request-course-form input[type="radio"] + label span {
+    display:inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -3px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+#request-course-form input[type="radio"] + label span {
+    border: 1px solid #D0D0D0;
+    margin-right: 15px;
+}
+#request-course-form input[type="radio"]:checked + label span{
+     background-color: #008efd;
+     border: 0px;
+     background-image: url(../img/radio-check-min.png);
+     background-size: contain;
+}
+#request-course-form input[type="radio"] + label span, #request-course-form input[type="radio"]:checked + label span {
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -moz-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}
+#request-course-form .radio label {
+    padding-left: 0px;
+    margin-right: 25px;
+    margin-bottom: 2px;
+    color: black;
+}
+#requestcustomized_pdf_names {
+    text-align: left;
+    max-height: 80px;
+    max-width: 200px;
+    overflow-y: hidden;
+    word-break: break-word;
+    margin-left: 10px;
+}
+
+.finish {
+    margin: 0px auto 0px auto;
+    background-color: #018FFF;
+    border: 2px solid #018FFF;
+    border-radius: 2px;
+    width: 10%;
+    height: 100%;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;  
+    display: table;
+}
+.finish > a {
+    color: white;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tellusdivtitleinput, .tellus2divtitleinput, .tellus2divdescinput {
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px;
+    width: 100%;
+    margin: 10px 0px 20px 0px;
+    font-family: 'Roboto', sans-serif;  
+    font-size: 15px;
+}
+.tellusdivtitleinput, .tellus2divtitleinput, .tellus2divdescinput {
+    height: 45px;    
+}
+.tellusdivtitleinput::-webkit-input-placeholder, .tellus2divdescinput::-webkit-input-placeholder, .tellus2divtitleinput::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #ABABAB;
+}
+.tellusdivtitleinput.textarea {
+    height: auto;
+    overflow-y: auto;
+    font-weight: normal;
+    resize: none;
+    width: 450px;
+}
+
+.tellus-modal-finish-container {
+    height: 520px;
+    display: table;
+    width: 100%;
+}
+.tellus-modal-finish-small {
+    display: table-cell;
+    vertical-align: middle;
+    color: #3876A8;
+    font-family: 'Roboto', sans-serif;  
+}
+.tellus-modal-finish-small > .title {
+    font-size: 25px;
+}
+.tellus-modal-finish-small > .content {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 7px;
+}
+
+.add-online-course-modal-content {
+    position: relative;
+    margin: auto;
+    vertical-align: middle;
+    padding: 0;
+    background-color: transparent;
+    width: 100%;
+    box-shadow: none !important;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border: 0px;
+}
+
+.required:after {
+    content: '*';
+    color: red;
+    position: relative;
+    left: 5px;
+    top: -5px;
+}
+
+.add-online-course-modal-content-title {
+    color: #066FB7;
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    margin: 35px 20px 20px 20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.add-online-course-modal-content-small {
+    width: 60%;
+    display: block;
+    /*height: 63%;*/
+    /*min-height: 700px;*/
+    margin: 0px auto;
+    /*border: 2px solid white;*/
+    /*border-radius: 5px;*/
+    background-color: white;
+}
+
+.add-online-course-modal-content-small .modal-body {
+    padding: 2px 10%;
+}
+
+#add-online-course-form, #add-offline-course-form, #add-proposal-form {
+    text-align: left;
+    color: #066FB7;
+    font-size: 16px;
+    padding-top: 25px;
+}
+
+#add-online-course-form input[type="radio"], #add-offline-course-form input[type="radio"] {
+    display: none;
+}
+
+#add-online-course-form input[type="radio"] + label span, #add-offline-course-form input[type="radio"] + label span {
+    display:inline-block;
+    width: 19px;
+    height: 19px;
+    margin: -3px 4px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#add-online-course-form input[type="radio"] + label span, #add-offline-course-form input[type="radio"] + label span {
+    border: 2px solid #066FB7;
+    margin-right: 15px;
+}
+
+#add-online-course-form input[type="radio"]:checked + label span, #add-offline-course-form input[type="radio"]:checked + label span{
+     background-color: #008efd;
+     border: 0px;
+     background-image: url(../img/radio-check-min.png);
+     background-size: contain;
+}
+
+#add-online-course-form input[type="radio"] + label span,
+#add-online-course-form input[type="radio"]:checked + label span,
+#add-offline-course-form input[type="radio"] + label span,
+#add-offline-course-form input[type="radio"]:checked + label span {
+  -webkit-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -moz-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}
+
+#add-online-course-form .radio label, #add-offline-course-form .radio label {
+    padding-left: 0px;
+    margin-right: 25px;
+    margin-bottom: 2px;
+    color: black;
+}
+
+#blah, #blah-settings, #blahOffline {
+    max-width:135px;
+    width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 12px 12px;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: #066FB7;
+    color: white;
+    font-weight: normal;
+}
+
+.btn-post {
+    font-weight: bold;
+    color: inherit;
+    margin-top: 20px;
+    margin: auto;
+    display: block;
+    border: 1px solid;
+    padding: 15px;
+    min-width: 180px;
+    border-radius: 5px;
+}
+
+.upload-content-container {
+    margin-top: 20px;
+}
+
+.upload-content {
+    padding-bottom: 20px;
+}
+
+.upload-content-left-side {
+    padding-top: 20px;
+    padding-right: 0px;
+}
+
+.upload-content-img {
+    max-width: 86%;
+    min-height: 108px;
+    margin: auto;
+    display: block;
+    margin-top: -15px;
+    margin-left: 18px;
+}
+
+#add-online-course-form textarea::placeholder {
+    color: #066FB7;
+    font-size: 16px;
+}
+
+#add-online-course-desc::placeholder, #add-offline-course-desc::placeholder {
+    color:  #D0D0D0 !important;
+    font-size: 11pt !important;
+}
+
+.btn-add {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #E3E3E3;
+}
+
+.btn-add:hover {
+    background-color: transparent;
+}
+
+.add-upload-content-img {
+    width: 100%;
+}
+
+/* Breadcrups CSS */
+
+.arrow-steps {
+    height: 60px;
+}
+
+.arrow-steps .step.first {
+    background-color: #F2F2F2;
+}
+.arrow-steps .step.first:after,
+.arrow-steps .step.first:before {
+    border-left: 17px solid #F2F2F2; 
+    transition: border-color 0.2s #F2F2F2;
+}
+.arrow-steps .step.second {
+    background-color: #E7E7E9;
+}
+.arrow-steps .step.second:after,
+.arrow-steps .step.second:before {
+    border-left: 17px solid #E7E7E9; 
+    transition: border-color 0.2s #E7E7E9;
+}
+.arrow-steps .step.third {
+    background-color: #F2F2F2;
+}
+.arrow-steps .step.third:after,
+.arrow-steps .step.third:before {
+    border-left: 17px solid #F2F2F2; 
+    transition: border-color 0.2s #F2F2F2;
+}
+
+
+.arrow-steps .step {
+    display: table;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;  
+    text-align: center;
+    color: #666;
+    cursor: default;
+    margin: 0px;
+    width: 33.3%;
+    height: 100%;
+    padding: 10px 10px 10px 30px;
+    min-width: 180px;
+    float: left;
+    position: relative;
+    background-color: #d9e3f7;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+    transition: background-color 0.2s ease;
+}
+
+.arrow-steps .step:after,
+.arrow-steps .step:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: -17px;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 17px solid #d9e3f7;    
+    z-index: 2;
+    transition: border-color 0.2s ease;
+}
+
+.arrow-steps .step:before {
+    right: auto;
+    left: 0;
+    border-left: 17px solid #fff;   
+    z-index: 0;
+}
+
+.arrow-steps .step:first-child:before {
+    border: none;
+}
+
+.arrow-steps .step:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.arrow-steps .step span {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    height: 40px;
+    text-transform: uppercase;
+}
+
+.arrow-steps .step span:before {
+    opacity: 0;
+    content: "✔";
+    position: absolute;
+    top: 9px;
+    left: 25%;
+}
+
+.arrow-steps .step.done span:before {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease 0.5s;
+    -moz-transition: opacity 0.3s ease 0.5s;
+    -ms-transition: opacity 0.3s ease 0.5s;
+    transition: opacity 0.3s ease 0.5s;
+}
+
+.arrow-steps .step.current {
+    color: #fff;
+    background-color: #018FFF;
+}
+
+.arrow-steps .step.current:after {
+    border-left: 17px solid #018FFF;    
+}
+
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+
+/* CUSTOM STYLES */
+.icondiv {
+    text-align: center;
+    padding-top: 30px;
+}
+.methodsdiv {
+    height: 50px;
+    display: table;
+    width: 65%;
+    margin: 15px auto 0px auto;
+}
+.methodsdivsmall {
+    display: table-cell;
+    vertical-align: middle;
+}
+.methodsdivcontents {
+    cursor: pointer;
+    display: inline-block;
+    width: 45%;
+    text-transform: uppercase;
+    border: 1px solid #E9EDF1;
+    border-radius: 3px;
+    color: #85898D;
+    height: 40px;
+    padding: 5px 5px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.methodsdivcontents > img{
+    margin-right: 5px;
+}
+.methodsdivcontents > p {
+    display: inline;
+}
+.ordiv {
+    margin: 10px 0px 10px 0px;
+}
+
+.login_email, 
+.login_password, 
+.signup_fullname, 
+.signup_email, 
+.signup_password, 
+.signup_country,
+.signup_industry, 
+.signup_interest, 
+.signup_occupation, 
+.signup_organization,
+.signup_corporate_company_name,
+.signup_corporate_company_email,
+.signup_corporate_company_phone_number,
+.signup_corporate_admin_occupation, 
+.signup_field {
+    width: 63%;
+    border: 1px solid #D5D5D5;
+    border-radius: 3px;
+    color: black;
+    height: 45px;
+    padding: 0px 15px;
+    margin-bottom: 15px;
+}
+.login_email::-webkit-input-placeholder, 
+.login_password::-webkit-input-placeholder, 
+.signup_fullname::-webkit-input-placeholder, 
+.signup_email::-webkit-input-placeholder, 
+.signup_password::-webkit-input-placeholder, 
+.signup_country::-webkit-input-placeholder, 
+.signup_industry::-webkit-input-placeholder, 
+.signup_interest::-webkit-input-placeholder, 
+.signup_occupation::-webkit-input-placeholder, 
+.signup_organization::-webkit-input-placeholder,
+.signup_corporate_company_name::-webkit-input-placeholder, 
+.signup_corporate_company_email::-webkit-input-placeholder, 
+.signup_corporate_company_phone_number::-webkit-input-placeholder, 
+.signup_corporate_admin_occupation::-webkit-input-placeholder,
+.signup_field::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #D8D8D8;
+    text-transform: none;
+}
+
+select#signup_country:required:invalid, 
+select#country_contactus:required:invalid, 
+select#signup_industry:required:invalid,
+select#signup_interest:required:invalid,
+select#signup_corporate_admin_occupation:required:invalid,
+select#signup_occupation:required:invalid {
+  color: #D8D8D8;
+}
+select#signup_country option[value=""][disabled], 
+select#country_contactus option[value=""][disabled], 
+select#signup_industry option[value=""][disabled],
+select#signup_interest option[value=""][disabled],
+select#signup_corporate_admin_occupation option[value=""][disabled],
+select#signup_occupation option[value=""][disabled] {
+  display: none;
+}
+select#signup_country option, 
+select#country_contactus option, 
+select#signup_industry option,
+select#signup_interest option,
+select#signup_corporate_admin_occupation option,
+select#signup_occupation option {
+  color: black;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 20px;
+  margin-bottom: 0px !important;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 1px;
+  bottom: 1px;
+  background-color: #E7E7E9;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #018FFF;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #018FFF;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.modal-content-small.forgotpassword {
+    width: 30%;
+    min-width: 400px;
+}
+.remembermediv, .forgotpassworddiv, .signinmodalbuttondiv {
+    width: 65%;
+    height: 30px;
+    margin: 0px auto 0px auto;
+}
+.rememberme, .forgotpassword, .signinmodalbutton {
+    display: flex;
+    margin: 0px auto 0px auto;
+    width: 100%;
+    justify-content: center;
+}
+.forgotpasswordbutton {
+    cursor: pointer;
+}
+.rememberme > p, .switchdiv {
+    display: table-cell;
+    vertical-align: middle;
+}
+.switchdiv {
+    margin-left: 15px;
+    margin-bottom: 0px;
+    display: inline-block;
+    height: 20px !important;
+}
+.forgotpassword > a {
+    color: #154CFE;
+    text-decoration: underline;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.signinmodalbuttondiv {
+    display: table;
+    margin-top: 10px;
+    margin-bottom: 40px;
+} 
+.signinmodalbutton {
+    display: inline-block;
+    vertical-align: middle;
+}
+.signinmodalbutton2 {
+    cursor: pointer;
+    display: table-cell;
+    vertical-align: middle;
+    height: 40px;
+    background-color: #018FFF;
+    color: white !important;
+    border-radius: 5px;
+    min-width: 110px;
+    font-weight: normal !important;
+    text-align: center;
+    border-color: #018FFF !important;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 18px;
+    outline-color: transparent;
+    transition: all 0.5s;
+}
+.signinmodalbutton2:hover, .signinmodalbutton2:focus {
+    background-color: white !important; 
+    border-color: #018FFF !important;
+    border-width: 1px;
+    border-style: solid;
+    color: #018FFF !important;
+}
+.signinmodalbutton2:disabled {
+    background-color: #dddddd !important; 
+    border-color: #dddddd !important;
+    border-width: 1px;
+    border-style: solid;
+}
+
+
+.modalarrowleft {
+    color: rgb(255, 255, 255);
+    content: "\f0d8";
+    font-family: FontAwesome;
+    font-size: 35px;
+    left: 49%;
+    margin-left: -8px;
+    background-color: red;
+}
+
+.modal-headersmall {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    align-items: center;
+}
+.modalheadercontent {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.modal-arrows {
+    height: 20px;
+    background-color: transparent;
+    font-size: 30px;
+    color: white;
+    padding: 0px 15px;
+}
+
+.modal-arrowssmall {
+    display: table;
+    width: 100%;
+}
+.modalarrowcontent {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+    text-align: center;
+}
+.modalarrowcontent > i {
+    display: block;
+}
+
+/* employeeconfirmation-modal */
+.employeeconfirmation-modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.employeeconfirmation-modal-content .modal-body{
+    max-width: 400px;
+    padding: 50px 50px;
+    text-align: center;
+}
+.employeeconfirmation-modal-content #popuptitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.confirmationbuttondiv {
+    min-height: 40px;
+}
+.confirmationbuttondiv .buttonyes {
+    background-color: #018FFF;
+    color: white;
+    height: 100%;
+    height: 40px;
+    font-size: 20px;
+    width: 40%;
+    margin-right: 5%;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+}
+.confirmationbuttondiv .buttonno {
+    background-color: white;
+    color: black;
+    height: 100%;
+    font-size: 20px;
+    height: 40px;
+    width: 40%;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+}
+
+.pdfproposal {
+    margin-top: 25px;
+}
+
+.pdfproposal a{
+    width: auto;
+    padding-right: 25px;
+}
+
+.pdfproposal img {
+    max-height: 60px;
+    margin-right: 15px;
+}
+
+.pdfitemname {
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 10pt;
+    color: #4780B0;
+}
+
+#contactusconfirmationclose{
+    color: #018FFF;
+    cursor: pointer;
+}
+
+.deletecustomized {
+    float: right;
+    cursor: pointer;
+    width: 26px;
+}
+
+
+/* Forgot your Password */
+.forgot-password-content {
+    background-color: white;
+    border-radius: 2px;
+    padding: 10px 20px;
+    text-align: center;
+}
+.forgotpassword_title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    color: #066FB7;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+.forgotpassword_quote {
+    font-size: 16px;
+    text-align: justify;
+    word-break: break-word;
+    display: inline-block;
+}
+.login_email.forgotpassword {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 70%;
+}
+#reset_password_button, #reset_password_ok {
+    display: block;
+    padding: 10px 20px;
+    height: auto;
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+}
+.resetpasswordbutton {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1299px) {
+  .methodsdiv {
+    width: 86%;
+  }
+  .login_email.sign, 
+  .login_password.sign, 
+  .signup_fullname, 
+  .signup_email, 
+  .signup_password, 
+  .signup_country, 
+  .signup_industry, 
+  .signup_interest, 
+  .signup_occupation, 
+  .signup_organization, 
+  .signup_corporate_company_name, 
+  .signup_corporate_company_email, 
+  .signup_corporate_company_phone_number, 
+  .signup_corporate_admin_occupation {
+    width: 83%;
+  }
+}
+
+@media (max-width: 999px) {
+    .modal-content-small {
+        width: 35%;
+    }
+}
+
+@media (max-width: 910px) {
+  .tellus-modal-content-small {
+    width: 90%;
+    min-width: 700px;
+  }
+  .tellusnextdiv {
+    margin-top: 50px;
+  }
+  .customizedcoursesarea label {
+    padding-right: 10px;
+  }
+}
+@media (max-width: 789px) {
+    .modal-content-small {
+        width: 45%;
+    }
+}
+@media (max-width: 767px) {
+  .tellus-modal-content-small {
+    width: 90%;
+    min-width: 0px;
+  }
+  .tellusdiv, .tellus2div, .tellus3div {
+    margin: 10px 20px 0px 20px;
+  }
+  .tellus-modal-content-title {
+    margin: 15px 20px 10px 20px;
+  }
+  .arrow-steps {
+    height: 40px;
+  }
+  .arrow-steps .step {
+    padding: 0;
+    min-width: 0px;
+  }
+  .arrow-steps .step:after, .arrow-steps .step:before {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+  }
+  .tellusdivtitleinput, .tellus2divtitleinput, .tellus2divdescinput {
+    margin: 5px 0px 10px 0px;
+  }
+  .customizedcoursesarea > li {
+    margin: 2.5px 0px;
+  }
+  .tellusdivsmall, .tellus2divsmall {
+    width: 100%;
+  }
+  .tellusdivsmall.right {
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 20px;
+  }
+  .tellusdiv, .tellus2div, .tellus3div {
+    height: auto;
+  }
+  .tellusnextdiv {
+    margin-top: 0px;
+  }
+}
+@media (max-width: 720px) {
+  .tellus-modal-content-small.unauthorized {
+    width: 70%;
+    min-width: 300px;
+  }    
+}
+@media (max-width: 649px) {
+    .modal-content-small {
+        width: 55%;
+    }
+}
+@media (max-width: 550px) {
+  .tellus-modal-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+  }
+  .customizedcoursesarea > li {
+    width: 100%;
+  }
+  .arrow-steps .step {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .arrow-steps .step:after, .arrow-steps .step:before {
+    right: -12px;
+  }
+  .arrow-steps .step.second:after, .arrow-steps .step.second:before {
+    border-left: 12px solid #E7E7E9;
+  }
+  .arrow-steps .step.third:after, .arrow-steps .step.third:before {
+    border-left: 12px solid #F2F2F2;
+  }
+  .arrow-steps .step span:before {
+    left: inherit;
+    right: -3%;
+  }
+  .arrow-steps .step.current:after {
+    border-left: 12px solid #018FFF;
+  }
+  .tellusnext > button {
+    padding: 0px 20px;
+  }
+  #tellus-modal .checkbox label::after {
+    padding-left: 4px;
+    padding-top: 2px;
+  }
+  .tellus3divtitle, .tellus3divdesc {
+    display: inline-block;
+    width: 100%;
+  }
+  .tellusnextdiv>.text {
+    padding-right: 20px;
+    text-align: left;
+  }
+  .tellusnextright {
+    margin-right: 20px; 
+  }
+  .tellusnext {
+    width: 30%;
+  }
+}
+
+@media (max-width: 499px) {
+    .modal-content-small {
+        width: 65%;
+    }
+}
