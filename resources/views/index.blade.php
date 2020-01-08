@@ -110,7 +110,7 @@
                 <h3>Pkl 18.00 - 22.00 WIB</h3>
                 <br>
                 <h2>FEE</h2>
-                <h3>Rp 1.000.000 - 2.000.000</h3>
+                <h3>Rp 1.000.000,-</h3>
 
                 <a class="slider_btn hvr-icon-up" href="{{ url('/register') }}" style="font-weight: 600;margin-top: 20px; font-size: 20px;">Register Now<i class="fas fa-user-plus hvr-icon" style="margin-left: 15px;"></i></a> 
               </div>

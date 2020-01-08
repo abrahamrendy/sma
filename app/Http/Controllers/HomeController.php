@@ -150,7 +150,7 @@ class HomeController extends Controller
 
     public function register()
     {
-        return view('header')->withTitle('Register - KATARTIZO Mission Academy').
+        return view('header', ['registerflag' => true])->withTitle('Register - KATARTIZO Mission Academy').
                 view('contactus').
                 view('footer');
     }
