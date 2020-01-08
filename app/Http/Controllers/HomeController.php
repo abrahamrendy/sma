@@ -29,144 +29,9 @@ class HomeController extends Controller
     */
     public function index()
     {
-        $user_industries = DB::table('user_industries')
-                                ->orderBy('priority', 'desc')
-                                ->orderBy('name', 'asc')
-                                ->get();
-        $user_occupations = DB::table('user_occupations')
-                                ->orderBy('priority', 'desc')
-                                ->orderBy('name', 'asc')
-                                ->get();
-
-        // $homepage_contents = Homepage::all();
-        $header_contents = DB::table('home_settings')->first();
-        $homepage_contents = DB::table('home_contents')
-                                ->orderBy('type', 'asc')
-                                ->orderBy('priority', 'asc')
-                                ->get();
                  
-        $courses_featured = DB::select("SELECT users.organization as courselecturer,
-                                                coursejoined.*
-                                        FROM
-                                            (SELECT lecturers.user_id,
-                                                    coursestable.*
-                                            FROM
-                                                (SELECT courses.id AS course_id,
-                                                        courses.coursecode,
-                                                        courses.title,
-                                                        courses.price,
-                                                        courses.image,
-                                                        courses.overview,
-                                                        courses.info,
-                                                        courses.level,
-                                                        courses.rating,
-                                                        courses.approved_time,
-                                                        currencies.symbol
-                                                FROM courses 
-                                                INNER JOIN currencies on courses.currency_id = currencies.id
-                                                WHERE ((find_in_set(?,category) <> 0) AND status=1 AND offline_progress<=25.00 AND IF(type=0,end_date>CURDATE(),1=1) ) ) AS coursestable
-                                            LEFT JOIN (SELECT * FROM user_courses WHERE TYPE=1) AS lecturers ON lecturers.`course_id` = coursestable.course_id) AS coursejoined
-                                        LEFT JOIN users ON coursejoined.user_id=users.`id`
-                                        GROUP BY coursejoined.course_id
-                                        ORDER BY coursejoined.course_id DESC
-                                        LIMIT 12; ", [1]);
-        // GROUP_CONCAT(CONCAT(IF(users.title is null,'',CONCAT(users.title,'. ')),users.name) SEPARATOR ', ')
-        $courses_trending = DB::select("SELECT users.organization as courselecturer,
-                                                coursejoined.*
-                                        FROM
-                                            (SELECT lecturers.user_id,
-                                                    coursestable.*
-                                            FROM
-                                                (SELECT courses.id AS course_id,
-                                                        courses.coursecode,
-                                                        courses.title,
-                                                        courses.price,
-                                                        courses.image,
-                                                        courses.overview,
-                                                        courses.info,
-                                                        courses.level,
-                                                        courses.rating,
-                                                        courses.approved_time,
-                                                        currencies.symbol,
-                                                        count(enrollers.course_id) as enrollercount
-                                                FROM courses 
-                                                INNER JOIN currencies on courses.currency_id = currencies.id
-                                                LEFT JOIN (SELECT * FROM user_courses WHERE TYPE=0) AS enrollers ON enrollers.`course_id` = courses.id
-                                                WHERE (STATUS=1 AND offline_progress<=25.00 AND IF(courses.type=0,end_date>CURDATE(),1=1) )
-                                                GROUP BY courses.id ORDER BY enrollercount DESC) AS coursestable
-                                            LEFT JOIN (SELECT * FROM user_courses WHERE TYPE=1) AS lecturers ON lecturers.`course_id` = coursestable.course_id) AS coursejoined
-                                        LEFT JOIN users ON coursejoined.user_id=users.`id`
-                                        GROUP BY coursejoined.course_id
-                                        ORDER BY enrollercount DESC
-                                        LIMIT 12 ");
-        // GROUP_CONCAT(CONCAT(IF(users.title is null,'',CONCAT(users.title,'. ')),users.name) SEPARATOR ', ')
-        $courses_new = DB::select("SELECT users.organization as courselecturer,
-                                            coursejoined.*
-                                    FROM
-                                        (SELECT lecturers.user_id,
-                                                coursestable.*
-                                        FROM
-                                            (SELECT courses.id AS course_id,
-                                                    courses.coursecode,
-                                                    courses.title,
-                                                    courses.price,
-                                                    courses.image,
-                                                    courses.overview,
-                                                    courses.info,
-                                                    courses.level,
-                                                    courses.rating,
-                                                    courses.approved_time,
-                                                    currencies.symbol
-
-                                            FROM courses 
-                                            INNER JOIN currencies on courses.currency_id = currencies.id
-                                            WHERE (STATUS=1 AND offline_progress<=25.00 AND IF(courses.type=0,end_date>CURDATE(),1=1) ) ) AS coursestable
-                                        LEFT JOIN (SELECT * FROM user_courses WHERE TYPE=1) AS lecturers ON lecturers.`course_id` = coursestable.course_id) AS coursejoined
-                                    LEFT JOIN users ON coursejoined.user_id=users.`id`
-                                    GROUP BY coursejoined.course_id
-                                    ORDER BY coursejoined.course_id DESC 
-                                    LIMIT 12 ");
-        $courses_categories = DB::table('courses_categories')
-                                ->where('name', '!=', 'FEATURED')
-                                ->orderBy('priority', 'desc')
-                                ->orderBy('name', 'asc')
-                                ->get();
-        $currencies = DB::table('currencies')->orderBy('name','asc')->get();
-                                
-        $yuwlp = array();
-        $trusted_by = array();
-        $okp = array();
-        $courses = array();
-        $courses['featured']= $courses_featured;
-        $courses['trending']= $courses_trending;
-        $courses['new']= $courses_new;
-
-        foreach ($homepage_contents as $hcv) {
-            if ($hcv->type == 3)
-            {   # Your Ultimate Workplace Learning Platform 
-                array_push($yuwlp, $hcv);
-            } else if ($hcv->type == 1)
-            {   # Trusted By
-                array_push($trusted_by, $hcv);
-            } else if ($hcv->type == 2)
-            {   # Our Knowledge Partner
-                array_push($okp, $hcv);
-            }
-        }
-
-        return view('header', ['user_industries' => $user_industries,
-                                'user_interests' => $courses_categories,
-                                'user_occupations' => $user_occupations,
-                                'currencies' => $currencies,
-                                'show_see_how' => true,
-                                'courses_categories' => $courses_categories])->withTitle('LAD Global | Free Workplace Learning and Customized Training Platform').
-                view('index', [ 'header_contents' => $header_contents,          // Homepage slider contents
-                                'yuwlp' => $yuwlp,                              // Your Ultimate Workplace Learning Platform
-                                'trusted_by' => $trusted_by,                    // Your Ultimate Workplace Learning Platform
-                                'okp' => $okp,                                  // Our Knowledge Partner
-                                'courses' => $courses,                          // Course list
-                                'courses_categories' => $courses_categories     // Course categories
-                                ]).
+        return view('header')->withTitle('Home - KATARTIZO Mission Academy').
+                view('index').
                 view('footer');
         // return "asd";
     }
@@ -201,8 +66,7 @@ class HomeController extends Controller
     */
     public function curriculum()
     {
-
-        return view('header', ['curriculumflag' => true])->withTitle('LAD Global | Achievements').view('curriculum').view('footer');
+        return view('header', ['curriculumflag' => true])->withTitle('Curriculum - KATARTIZO Mission Academy').view('curriculum').view('footer');
     }
 
     /**
@@ -279,23 +143,14 @@ class HomeController extends Controller
     */
     public function contactus()
     {
-        $user_industries = DB::table('user_industries')
-                                ->orderBy('priority', 'desc')
-                                ->orderBy('name', 'asc')
-                                ->get();
-        $user_occupations = DB::table('user_occupations')
-                                ->orderBy('priority', 'desc')
-                                ->orderBy('name', 'asc')
-                                ->get();
-        $courses_categories = DB::table('courses_categories')
-                                ->where('name', '!=', 'FEATURED')
-                                ->orderBy('priority', 'desc')
-                                ->orderBy('name', 'asc')
-                                ->get();
-        return view('header', ['user_industries' => $user_industries,
-                                'user_interests' => $courses_categories,
-                                'user_occupations' => $user_occupations,
-                                'courses_categories' => $courses_categories])->withTitle('LAD Global | Contact Us').
+        return view('header')->withTitle('Contact Us - KATARTIZO Mission Academy').
+                view('contactus').
+                view('footer');
+    }
+
+    public function register()
+    {
+        return view('header')->withTitle('Register - KATARTIZO Mission Academy').
                 view('contactus').
                 view('footer');
     }
@@ -482,7 +337,7 @@ class HomeController extends Controller
     public function aboutus()
     {
 
-        return view('header', ['lecturerflag' => true])->withTitle('LAD Global | About Us').
+        return view('header', ['lecturerflag' => true])->withTitle('Lecturers - KATARTIZO Mission Academy').
                 view('lecturers').
                 view('footer');
     }

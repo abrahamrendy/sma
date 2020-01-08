@@ -8,7 +8,7 @@
               <div class="col-lg-23 col-md-23 col-sm-23 footer_left">
                 <div class="single_footer_top">
                   <ul class="footer_small">
-                    <li style="margin-top: 0px;"><img class="ladicon" src="{{ URL::to('/') }}/img/ladwhite-min.png" alt="img"></li>
+                    <li style="margin-top: 0px;"><img class="ladicon" src="{{ URL::to('/') }}/img/KATARTIZO LOGO-01.png" alt="img"></li>
                     <li>
                       <ul class="single_footer_top_sublist">
                         <li><a target="_blank" href="https://www.facebook.com/LAD-252603775224485/"><img src="{{ URL::to('/') }}/img/footer/facebook-min.png" alt="img"></a></li>

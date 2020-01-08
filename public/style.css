@@ -244,7 +244,7 @@ img{
   text-decoration: none;
   width: 50px;
   z-index: 9;
-  border:1px solid;
+  border:1px solid #A27B2E;
    -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -255,6 +255,7 @@ img{
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  color: #A27B2E;
 
 }
 .scrollToTop>i{
@@ -267,7 +268,8 @@ img{
 .scrollToTop:hover, .scrollToTop:focus{
   text-decoration: none;
   outline: none;
-  background-color: #fff;
+  background-color: #A27B2E;
+  color: #2E2E2E;
 }
 
 /*--------------------*/
@@ -1163,7 +1165,6 @@ img{
   float: left;
   width: 100%;
   padding: 30px 0px;
-  padding-bottom: 0px;
   text-align: center;
 }
 .footer_top{
@@ -1178,7 +1179,7 @@ img{
   padding: 10px 0px;
 }
 .single_footer_top > ul > li {
-  max-height: 50px;
+  max-height: 60px;
   margin: 10px 0px;
   font-size: 14px;
 }
@@ -1194,7 +1195,7 @@ img{
   height: 10%;
 }
 .ladicon {
-  max-height: 40px;
+  max-height: 70px;
   width: auto;
 }
 .footer_middle{

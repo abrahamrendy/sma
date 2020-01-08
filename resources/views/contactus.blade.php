@@ -27,19 +27,12 @@
   <!-- Start Contactus slider section -->
   <section id="sliderSection" class="homepageslider">            
     <div class="mainslider_area">
-    <img class="slideimage" src="{{ URL::to('/') }}/img/contactus/contactusimage-min.png" alt="contactus-img">
-        <?php if (false): ?>
-            <!-- Remove this when the slider is stable -->
-            <!-- Start super slider -->
-            <div id="slides">
-                <ul class="slides-container">
-                    <li>
-                        <!-- Static Contents -->
-                        <img class="slideimage" src="{{ URL::to('/') }}/img/contactus/contactusimage-min.png" alt="contactus-img">
-                    </li>
-                </ul>
+        <img class="slideimage hidden" src="{{ URL::to('/') }}/img/contactus/contactusimage-min.png" alt="contactus-img">
+        <div class="slider_caption" style="display: flex; height: 100%; max-height: 600px;">
+            <div style="margin: auto;">
+              <h1 style="text-transform: uppercase; margin-top: 0px;" class="lad_homeslider">REGISTER</h1>
             </div>
-        <?php endif ?>
+        </div>
       
     </div>
   </section>
@@ -55,19 +48,19 @@
               <h2>REGISTER</h2>
               <hr class="title_hr">
             </div>
-            <form id="contactusform">
+            <form id="contactusform" data-aos="fade-up">
               <div class="contactusform">
                 <div class="smallerdiv">
-                  <input type="text" name="firstname" tabindex="1" placeholder="Name" class="login_email" required>
+                  <input type="text" name="firstname" tabindex="1" placeholder="Nama" class="login_email" required>
                   <input type="text" name="lastname" tabindex="2" placeholder="TTL" class="login_email" required>
                   <input type="email" name="email" tabindex="3" placeholder="Email" class="login_email" required>
-                  <input type="text" name="company" tabindex="4" placeholder="Address" class="login_email">
-                  <input type="text" name="phone" tabindex="3" placeholder="Phone" class="login_email" id="contactus_phone">
+                  <input type="text" name="company" tabindex="4" placeholder="Alamat" class="login_email">
+                  <input type="text" name="phone" tabindex="3" placeholder="No. HP/WA" class="login_email" id="contactus_phone">
                   <input type="text" name="interestedin" tabindex="6" placeholder="Status Pelayanan" class="login_email">
-                  <textarea type="text" name="message" tabindex="7" placeholder="Tujuan Mendaftar" class="login_email" required></textarea>
+                  <textarea type="text" name="message" tabindex="7" placeholder="Tujuan Mendaftar" class="login_email" rows = 4 required></textarea>
                 </div>
                 <div class="submitdiv">
-                  <button type="submit" name="contact_button" tabindex="9" class="signinmodalbutton2" id = 'contactusbutton'>Submit</button>
+                  <button type="submit" name="contact_button" tabindex="9" class="signinmodalbutton2 hvr-underline-from-center" id = 'contactusbutton'>Submit</button>
                 </div>
               </div>
             </form>
@@ -88,7 +81,7 @@
               <h2>CONNECT WITH US</h2>
               <hr class="title_hr">
             </div>
-            <div class="connectwithusdiv">
+            <div class="connectwithusdiv" data-aos ="fade-right">
               <ul class="single_footer_top_sublist connectwithus">
                 <li><a target="_blank" href="https://www.facebook.com/LAD-252603775224485/"><img src="{{ URL::to('/') }}/img/contactus/facebookblue-min.png" alt="img"></a></li>
                 <li><a target="_blank" href="https://twitter.com/LADGlobal"><img src="{{ URL::to('/') }}/img/contactus/twitterblue-min.png" alt="img"></a></li>

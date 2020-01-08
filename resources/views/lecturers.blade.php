@@ -7,7 +7,7 @@
   <!-- Start About Us slider section -->
   <section id="sliderSection" class="homepageslider">            
     <div class="mainslider_area">
-      <img class="slideimage" src="{{ URL::to('/') }}/img/aboutusimage-min.png" alt="aboutus-img">
+      <img class="slideimage hidden" src="{{ URL::to('/') }}/img/aboutusimage-min.png" alt="aboutus-img">
       <div class="slider_caption" style="height: 100%; max-height: 600px; display: flex;">
         <h1 style="text-transform: uppercase; margin: auto;" class="lad_aboutusslider">LECTURERS</h1>
       </div>
@@ -29,61 +29,61 @@
               <ul class="price_nav aboutusleadershipteam" style="float: left; width: 100%">
                 <!-- Static Contents -->
                 <li data-aos="zoom-in-right">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/robert-yeo-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Dr. Tony Andrean</h2>
                 </li>
                 <li data-aos="zoom-in-right">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/anton-widodo-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Stevanus Yordan S.E., M.Th</h2>
                 </li>
                 <li data-aos="zoom-in-right">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/roy-lai-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Junus Mulyana M.Th</h2>
                 </li>
                 <li data-aos="zoom-in-right">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/david-tay-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Budi Mulyono S.T., M.Th, MPM</h2>
                 </li>
                 <li data-aos="zoom-in-right">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/david-tay-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Alexander Halim S.E., M.Th</h2>
                 </li>
               </ul>
 
               <ul class="price_nav aboutusleadershipteam" style="float: left; width: 100%">
                 <li data-aos="zoom-in-left">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/robert-yeo-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Hendry Saleh S.T., M.Th</h2>
                 </li>
                 <li data-aos="zoom-in-left">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/robert-yeo-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Edimax Siauta S.Th</h2>
                 </li>
                 <li data-aos="zoom-in-left">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/anton-widodo-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Mardi Susanto</h2>
                 </li>
                 <li data-aos="zoom-in-left">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/roy-lai-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Andreas Santosa S.S.</h2>
                 </li>
                 <li data-aos="zoom-in-left">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/david-tay-min.png" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Lina Arief S.T.</h2>
                 </li>
               </ul>
 
               <ul class="price_nav aboutusleadershipteam" style="float: left; width: 100%">
-                <li data-aos="zoom-in-left">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/david-tay-min.png" alt="img">
+                <li data-aos="zoom-in-right">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Adi Darta S.Kom</h2>
                 </li>
-                <li data-aos="zoom-in-left">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/david-tay-min.png" alt="img">
+                <li data-aos="zoom-in-right">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>dr. Agustina Karyanto</h2>
                 </li>
-                <li data-aos="zoom-in-left">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/david-tay-min.png" alt="img">
+                <li data-aos="zoom-in-right">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
                   <h2>Yogie Tazir S.S., M.A.</h2>
                 </li>
 

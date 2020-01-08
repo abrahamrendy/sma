@@ -4,9 +4,9 @@
       <img class="slideimage" src="{{ URL::to('/') }}/img/banner_home.jpg" alt="img">
       <div class="slider_caption" style="display: flex; height: 100%; max-height: 600px;">
         <div style="margin: auto;">
-          <h1 style="text-transform: uppercase; margin-top: 0px;" class="lad_homeslider">SUKAWARNA MISSION ACADEMY</h1>
-          <p class="lad_homesliderquote">Don't miss this chance, join us now! Click the button below to register!</p>
-          <a class="slider_btn hvr-sweep-to-right" href="{{ url('/contactus') }}">Register Now</a>  
+          <img src="{{ URL::asset('img/KATARTIZO LOGO-01.png') }}" alt="img" width="50%">  
+          <p class="lad_homesliderquote" style="margin-top: 0px;">Don't miss this chance, join us now! Click the button below to register!</p>
+          <a class="slider_btn hvr-sweep-to-right" href="{{ url('/register') }}">Register Now</a>  
         </div>
       </div>    
     </div>
@@ -112,7 +112,7 @@
                 <h2>FEE</h2>
                 <h3>Rp 1.000.000 - 2.000.000</h3>
 
-                <a class="slider_btn hvr-icon-up" href="{{ url('/contactus') }}" style="font-weight: 600;margin-top: 20px; font-size: 20px;">Register Now<i class="fas fa-user-plus hvr-icon" style="margin-left: 15px;"></i></a> 
+                <a class="slider_btn hvr-icon-up" href="{{ url('/register') }}" style="font-weight: 600;margin-top: 20px; font-size: 20px;">Register Now<i class="fas fa-user-plus hvr-icon" style="margin-left: 15px;"></i></a> 
               </div>
             </div>
           </div>

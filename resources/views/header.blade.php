@@ -15,7 +15,7 @@
     <!-- CSRF -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ isset($title)?$title:'LAD Global | Free Workplace Learning and Customized Training Platform' }}</title>
+    <title>{{ isset($title)?$title:'Home - KATARTIZO Mission Academy' }}</title>
 
     <!-- Bootstrap -->
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -50,7 +50,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ URL::asset('img/ladicon-min.png') }}" type="image/x-icon">  
+    <link rel="shortcut icon" href="{{ URL::asset('img/KATARTIZO LOGO-01.png') }}" type="image/x-icon">  
   
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -131,15 +131,15 @@
           <img class="headerhamburger" src="{{ URL::to('/') }}/img/icon-dashboard-min.png" style="max-height: 35px;" alt="logo">
         </button>
         <a href="{{url('/index')}}">
-          <img class="headerimage" src="{{ URL::to('/') }}/img/logo-min.png" style="max-height: 44px;" alt="logo">
+          <img class="headerimage" src="{{ URL::to('/') }}/img/KATARTIZO LOGO-01.png" style="max-height: 75px;" alt="logo">
         </a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse navbar_area homepage no-overflow" style="float: right; width: calc(100% - 126px);">    
+      <div id="navbar" class="navbar-collapse collapse navbar_area homepage no-overflow" style="float: right; width: calc(100% - 300px);">    
         <ul class="nav navbar-nav navbar-right custom_nav navbarlist">
           <li <?=(isset($browsecoursesflag) && ($browsecoursesflag==true))?'class="active"':'';?>><a href="{{ url('/') }}">Home</a></li>
           <li <?=(isset($lecturerflag) && ($lecturerflag==true))?'class="active"':'';?>><a href="{{ url('/lecturers') }}">Lecturers</a></li>
           <li <?=(isset($curriculumflag) && ($curriculumflag==true))?'class="active"':'';?>><a href="{{ url('/curriculum') }}">Curriculum</a></li>
-          <li><a class="home_signup_button hvr-icon-wobble-horizontal" id="signupbutton" href="{{ url('/contactus') }}" style="font-family: 'Montserrat'; font-weight: 500 !important; font-size: 1.5rem;">REGISTER <i class="fas fa-user-plus hvr-icon" style="margin-left: 5px;"></i></a></li>                    
+          <li><a class="home_signup_button hvr-icon-wobble-horizontal" id="signupbutton" href="{{ url('/register') }}" style="font-family: 'Montserrat'; font-weight: 500 !important; font-size: 1.5rem;">REGISTER <i class="fas fa-user-plus hvr-icon" style="margin-left: 5px;"></i></a></li>                    
         </ul>
       </div>
     </div>

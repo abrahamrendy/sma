@@ -54,7 +54,7 @@ video::-webkit-media-controls-panel {
 .navbar_area.homepage .navbarlist {
   padding-top: 0px;
   margin-right: 0px;
-  height: 45px;
+  height: 80px;
   display: flex;
   align-items: center;
 }
@@ -1050,11 +1050,12 @@ div.g-signin2.custom .abcRioButtonContentWrapper > .abcRioButtonIcon{
 /*       Footer       */
 /*--------------------*/
 .copyright {
-  color: white;
+  color: #A27B2E;
   font-family: 'Roboto', sans-serif;  
   font-size: 11px;
   width: 100%;
   padding-top: 10px;
+  font-weight: bold;
 }
 .single_footer_top_sublist {
   padding-top: 10px;
@@ -1266,7 +1267,7 @@ div.g-signin2.custom .abcRioButtonContentWrapper > .abcRioButtonIcon{
 }
 #sliderSection.homepageslider {
   min-height: 500px;
-  background-color: white;
+  background-color: #2E2E2E;
   margin-top: 80px;
 }
 body:modal-open #sliderSection.homepageslider {
@@ -3898,6 +3899,11 @@ body:modal-open #sliderSection.homepageslider {
 .contactusform > .smallerdiv > input[tabindex='7'] {
   width: 40%;
   margin-right: 1%;
+}
+
+.contactusform > .smallerdiv > textarea {
+  padding-top: 13px;
+  height: auto;
 }
 .contactusform > .smallerdiv > input[tabindex='2'], 
 .contactusform > .smallerdiv > input[tabindex='4'], 

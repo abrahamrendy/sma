@@ -882,7 +882,7 @@ body.modal-open {
 .signup_corporate_company_phone_number::-webkit-input-placeholder, 
 .signup_corporate_admin_occupation::-webkit-input-placeholder,
 .signup_field::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #D8D8D8;
+    color: #adadad;
     text-transform: none;
 }
 
@@ -892,7 +892,7 @@ select#signup_industry:required:invalid,
 select#signup_interest:required:invalid,
 select#signup_corporate_admin_occupation:required:invalid,
 select#signup_occupation:required:invalid {
-  color: #D8D8D8;
+  color: #adadad;
 }
 select#signup_country option[value=""][disabled], 
 select#country_contactus option[value=""][disabled], 
@@ -1015,32 +1015,45 @@ input:checked + .slider:before {
     cursor: pointer;
     display: table-cell;
     vertical-align: middle;
-    height: 40px;
-    background-color: #018FFF;
     color: white !important;
     border-radius: 5px;
     min-width: 110px;
     font-weight: normal !important;
     text-align: center;
-    border-color: #018FFF !important;
+    border-color: #A70014 !important;
     border-width: 1px;
     border-style: solid;
     font-size: 18px;
     outline-color: transparent;
     transition: all 0.5s;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 55px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: #a70014 !important;
+    border-color: #a70014 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0);
 }
 .signinmodalbutton2:hover, .signinmodalbutton2:focus {
-    background-color: white !important; 
-    border-color: #018FFF !important;
-    border-width: 1px;
-    border-style: solid;
-    color: #018FFF !important;
+    color: #a70014;  
+    background-color: white;
+    text-decoration: none;
+    border-color: #a70014 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
 }
 .signinmodalbutton2:disabled {
     background-color: #dddddd !important; 
     border-color: #dddddd !important;
     border-width: 1px;
     border-style: solid;
+}
+.signinmodalbutton2:before {
+  background: white !important;
 }
 
 

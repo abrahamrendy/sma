@@ -5,21 +5,6 @@
       <div class="slider_caption" style="height: 100%; max-height: 600px; display: flex;">
         <h1 style="text-transform: uppercase; margin: auto;" class="lad_achievements">Curriculum</h1>
       </div>
-      <?php if (false): ?>
-        <!-- Start super slider -->
-        <div id="slides">
-          <ul class="slides-container">
-            <!-- Start single slider-->
-            <li>
-              <img class="slideimage" src="{{ URL::to('/') }}/img/achievements-min.png" alt="achievements-img">
-              <div class="slider_caption" style="height: 100%; max-height: 600px; display: flex;">
-                <h1 style="text-transform: uppercase; margin: auto;" class="lad_achievements">Professional Achievements</h1>
-              </div>
-            </li>
-          </ul>
-        </div>
-      <?php endif ?>
-      
     </div>
   </section>
   <!-- End slider section -->
