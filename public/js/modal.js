@@ -105,9 +105,6 @@ if (closenetworkdetails != null) {
 // When the user clicks on the sign-in buttons, open the sign-in modal 
 if (signinbtn != null) {
     signinbtn.onclick = function() {
-        // hide choose account type modal
-        document.getElementById("account-modal").style.display = "none";
-
         show_signin_modal();
     }
 }

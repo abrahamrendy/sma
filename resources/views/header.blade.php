@@ -123,6 +123,46 @@
 
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up" style="font-size: 20pt;"></i></a>
 
+  <!-- start login modal -->
+  <div id="login-modal" class="modal" style="padding-top: 0px;">
+    <div class="modal-content" style="display: flex;">
+      <div class="modal-content-small" id="modal-content-small" style="margin: auto auto; padding-top: 10px; padding-bottom: 10px;">
+        <div id="signindiv" class="modal-body signmodal" style="max-height: none;">
+          <div class = 'hide' id="fromtellus">0</div>
+          <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+          <div class="icondiv">
+            <img src="{{ URL::to('/') }}/img/KATARTIZO LOGO-01.png" style="max-height: 70px;" alt="logo">
+          </div>
+          <br>
+          <p class="ordiv" id="ordiv"></p>
+          
+          <!-- Sign In -->
+          <input type="text" class="login_email sign" name="login_email" id="login_email" placeholder="Email" required="">
+          <input type="password" class="login_password sign" name="login_password" id="login_password" placeholder="Password" required="">  
+
+          <div class="remembermediv" id="remembermediv">
+            <div class="rememberme">
+              <!-- Rounded switch -->
+              <p>Remember me</p>
+              <div class="switchdiv">
+                <label class="switch">
+                  <input type="checkbox" name="login_rememberme" id="login_rememberme">
+                  <div class="slider round"></div>
+                </label>  
+              </div>
+            </div>
+          </div>
+          <div class="signinmodalbuttondiv">
+            <div class="signinmodalbutton">
+              <button type="submit" name="sign_button" class="signinmodalbutton2 hvr-underline-from-center" id="sign_button">Sign In</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End login modal -->
+
   <!-- start navbar -->
   <nav class="navbar navbar-default navbar-fixed-top homepagenavbar" role="navigation">
     <div class="container">
@@ -140,7 +180,7 @@
           <li <?=(isset($lecturerflag) && ($lecturerflag==true))?'class="active"':'';?>><a href="{{ url('/lecturers') }}">Lecturers</a></li>
           <li <?=(isset($curriculumflag) && ($curriculumflag==true))?'class="active"':'';?>><a href="{{ url('/curriculum') }}">Curriculum</a></li>
           <li <?=(isset($registerflag) && ($registerflag==true))?'class="active"':'';?>><a href="{{ url('/register') }}">Register</a></li>
-          <li><a class="home_signup_button hvr-icon-wobble-horizontal" id="signupbutton" href="{{ url('/register') }}" style="font-family: 'Montserrat'; font-weight: 500 !important; font-size: 1.5rem;">LOGIN <i class="fas fa-sign-in-alt hvr-icon" style="margin-left: 5px;"></i></a></li>
+          <li><a class="home_signup_button hvr-icon-wobble-horizontal" id="signinbutton" href="#" style="font-family: 'Montserrat'; font-weight: 500 !important; font-size: 1.5rem;">LOGIN <i class="fas fa-sign-in-alt hvr-icon" style="margin-left: 5px;"></i></a></li>
         </ul>
       </div>
     </div>
