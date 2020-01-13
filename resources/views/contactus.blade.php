@@ -27,10 +27,10 @@
   <!-- Start Contactus slider section -->
   <section id="sliderSection" class="homepageslider">            
     <div class="mainslider_area">
-        <img class="slideimage hidden" src="{{ URL::to('/') }}/img/contactus/contactusimage-min.png" alt="contactus-img">
+        <img class="slideimage" src="{{ URL::to('/') }}/img/register.png" alt="contactus-img">
         <div class="slider_caption" style="display: flex; height: 100%; max-height: 600px;">
             <div style="margin: auto;">
-              <h1 style="text-transform: uppercase; margin-top: 0px;" class="lad_homeslider">REGISTER</h1>
+              <!-- <h1 style="text-transform: uppercase; margin-top: 0px;" class="lad_homeslider">REGISTER</h1> -->
             </div>
         </div>
       

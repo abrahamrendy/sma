@@ -3,7 +3,7 @@
     <div class="mainslider_area">
     <img class="slideimage" src="{{ URL::to('/') }}/img/curiculum.jpg" alt="achievements-image">
       <div class="slider_caption" style="height: 100%; max-height: 600px; display: flex;">
-        <h1 style="text-transform: uppercase; margin: auto;" class="lad_achievements">Curriculum</h1>
+        <!-- <h1 style="text-transform: uppercase; margin: auto;" class="lad_achievements">Curriculum</h1> -->
       </div>
     </div>
   </section>

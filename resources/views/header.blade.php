@@ -176,7 +176,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar_area homepage no-overflow" style="float: right; width: calc(100% - 300px);">    
         <ul class="nav navbar-nav navbar-right custom_nav navbarlist">
-          <li <?=(isset($browsecoursesflag) && ($browsecoursesflag==true))?'class="active"':'';?>><a href="{{ url('/') }}">Home</a></li>
+          <li <?=(isset($homeflag) && ($homeflag==true))?'class="active"':'';?>><a href="{{ url('/') }}">Home</a></li>
           <li <?=(isset($lecturerflag) && ($lecturerflag==true))?'class="active"':'';?>><a href="{{ url('/lecturers') }}">Lecturers</a></li>
           <li <?=(isset($curriculumflag) && ($curriculumflag==true))?'class="active"':'';?>><a href="{{ url('/curriculum') }}">Curriculum</a></li>
           <li <?=(isset($registerflag) && ($registerflag==true))?'class="active"':'';?>><a href="{{ url('/register') }}">Register</a></li>

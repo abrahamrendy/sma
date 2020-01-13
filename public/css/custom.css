@@ -1144,8 +1144,7 @@ div.g-signin2.custom .abcRioButtonContentWrapper > .abcRioButtonIcon{
   text-align: center;
 }
 .footer_small.mobile .ladicon{
-  max-height: 60px;
-  margin-bottom: 20px;
+  max-height: 75px;
 }
 
 
@@ -1156,6 +1155,9 @@ div.g-signin2.custom .abcRioButtonContentWrapper > .abcRioButtonIcon{
   }
 }
 @media (max-width: 767px) {
+  .slider_caption img {
+    width: 100%;
+  }
   /* Checkpoint */
   #footer {
     display: none !important;
@@ -1190,9 +1192,6 @@ div.g-signin2.custom .abcRioButtonContentWrapper > .abcRioButtonIcon{
   .footer_small {
     width: 90%;
   }  
-  .copyright {
-    text-align: left !important;
-  }
 }
 
 /*--------------------*/
@@ -1287,6 +1286,7 @@ body:modal-open #sliderSection.homepageslider {
   }
   .slideimage {
     max-height: 500px !important;
+    width: auto !important;
   }
   .slider_caption h1.lad_homeslider, .slider_caption h1.lad_aboutusslider, .slider_caption h1.browsecoursessliders, .slider_caption h1.lad_achievements {
     font-size: 60px;
@@ -1300,6 +1300,7 @@ body:modal-open #sliderSection.homepageslider {
     font-size: 20px !important;
     padding-left: 45px !important;
     padding-right: 45px !important;
+    margin-top: 10px;
   }
 }
 @media (max-width: 991px) {
@@ -1332,9 +1333,6 @@ body:modal-open #sliderSection.homepageslider {
     font-weight: 400;
     letter-spacing: 2px;
     line-height: 43px;
-  }
-  .slider_btn {
-    display: none;
   }
 }
 
@@ -1622,6 +1620,8 @@ body:modal-open #sliderSection.homepageslider {
 @media (max-width: 991px) {
   .browsemore {
     padding-right: 26% !important;
+    float: left !important;
+    width: 100% !important;
   }
   .client_title > h2 {
     font-size: 40px;
@@ -1635,6 +1635,10 @@ body:modal-open #sliderSection.homepageslider {
     width: 32%;
     margin-left: 0.6666%;
     margin-right: 0.6666%;
+  }
+
+  .info-text-container {
+    width: 100%;
   }
 }
 @media (max-width: 767px) {
@@ -5175,6 +5179,11 @@ section#timeline article div.inner {
   margin: 5px 0 0 0;
   border-radius: 6px;
 }
+@media (max-width: 991px) {
+  section#timeline article div.inner {
+    width: 100%;
+  }
+}
 section#timeline article div.inner span.date {
   display: block;
   width: 60px;
@@ -5222,6 +5231,16 @@ section#timeline article div.inner h2:after {
   width: 10px;
   height: 10px;
   -webkit-transform: rotate(-45deg);
+}
+@media (max-width: 991px) {
+  section#timeline article div.inner h2 {
+    margin-top: 75px;
+  }
+  section#timeline article div.inner h2:after, section#timeline article:nth-child(2n + 2) div.inner h2:after {
+    left: 48.6% !important;
+    top: -5px;
+    right: 0px;
+  }
 }
 section#timeline article div.inner p {
   padding: 15px;

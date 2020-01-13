@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index()
     {
                  
-        return view('header')->withTitle('Home - KATARTIZO Mission Academy').
+        return view('header', ['homeflag' => true])->withTitle('Home - KATARTIZO Mission Academy').
                 view('index').
                 view('footer');
         // return "asd";

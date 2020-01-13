@@ -7,9 +7,9 @@
   <!-- Start About Us slider section -->
   <section id="sliderSection" class="homepageslider">            
     <div class="mainslider_area">
-      <img class="slideimage hidden" src="{{ URL::to('/') }}/img/aboutusimage-min.png" alt="aboutus-img">
+      <img class="slideimage" src="{{ URL::to('/') }}/img/lecturers.png" alt="aboutus-img">
       <div class="slider_caption" style="height: 100%; max-height: 600px; display: flex;">
-        <h1 style="text-transform: uppercase; margin: auto;" class="lad_aboutusslider">LECTURERS</h1>
+        <!-- <h1 style="text-transform: uppercase; margin: auto;" class="lad_aboutusslider">LECTURERS</h1> -->
       </div>
     </div>
   </section>

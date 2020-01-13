@@ -3730,11 +3730,22 @@ transition: all 0.5s;
   height: 35vw;
   margin-top: 4%;
 }
+@media (max-width: 991px) {
+  .info-box {
+    padding: 30px 9px;
+    height: 580px;
+  }
+}
 
 .info-text-container {
   float: right;
   width: 50%;
   color: white;
+}
+@media (max-width: 991px) {
+  .info-text-container {
+    width: 100%;
+  }
 }
 
 .info-text-container h2{

@@ -27,74 +27,17 @@
       </div>
     </div>
   </footer>
-  <footer id="mobile_footer" style="width: 100%; display: none;">
+  <footer id="mobile_footer" style="width: 100%; display: none; text-align: center">
     <div class="container">
       <div class="row lad_footer" style="margin-left: -60px; margin-right: -60px;">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="footer_top">
             <div class="footer_container">
-              <div class="panel-group mobile_footer_accordion" id="accordion">
-                <div class="panel panel-default hide">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="featured_programs">
-                        Featured Programs
-                        <img src="{{ URL::to('/') }}/img/arrow-down-white-min.png" class="footer_arrow">
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapse1" class="panel-collapse collapse footer_list_items">
-                    <ul>
-                      <li><a href="#" style="color: white;">Subject Name</a></li>
-                      <li><a href="#" style="color: white;">Subject Name</a></li>
-                      <li><a href="#" style="color: white;">Subject Name</a></li>
-                      <li><a href="#" style="color: white;">Subject Name</a></li>
-                      <li><a href="#" style="color: white;">Subject Name</a></li>
-                      <li><a href="#" style="color: white;">Subject Name</a></li>
-                      <li><a href="#" style="color: white;">Subject Name</a></li>
-                      <li><a href="#" style="color: white;">Subject Name</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="company">
-                        Company
-                        <img src="{{ URL::to('/') }}/img/arrow-down-white-min.png" class="footer_arrow">
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapse2" class="panel-collapse collapse footer_list_items">
-                    <ul>
-                      <li><a href="{{ URL::to('/') }}/aboutus" style="color: white;">About</a></li>
-                      <li><a href="{{ URL::to('/') }}/privacypolicy" style="color: white;">Privacy Policy</a></li>
-                      <li><a href="{{ URL::to('/') }}/termsofservice" style="color: white;">Terms of Service</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="support">
-                        Support
-                        <img src="{{ URL::to('/') }}/img/arrow-down-white-min.png" class="footer_arrow">
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapse3" class="panel-collapse collapse footer_list_items">
-                    <ul>
-                      <li><a href="{{ URL::to('/') }}/contactus" style="color: white;">Contact Us</a></li>
-                      <li><a href="{{ URL::to('/') }}/helpfaq" style="color: white;">Help & FAQ</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div> 
 
               <div class="col-lg-4 col-md-4 col-sm-4 footer_left">
                 <div class="single_footer_top">
                   <ul class="footer_small mobile">
-                    <li style="margin-top: 0px; margin-bottom: 20px;"><img class="ladicon" src="{{ URL::to('/') }}/img/ladwhite-min.png" alt="img"></li>
+                    <li style="margin-top: 0px; margin-bottom: 20px;"><img class="ladicon" src="{{ URL::to('/') }}/img/KATARTIZO LOGO-01.png" alt="img"></li>
                     <li>
                       <ul class="single_footer_top_sublist">
                         <li><a target="_blank" href="https://www.facebook.com/LAD-252603775224485/"><img src="{{ URL::to('/') }}/img/footer/facebook-min.png" alt="img"></a></li>
@@ -103,19 +46,7 @@
                         <li><a target="_blank" href="https://www.linkedin.com/company-beta/13353442"><img src="{{ URL::to('/') }}/img/footer/linkedin-min.png" alt="img"></a></li>
                       </ul>
                     </li>
-                    <li style="max-height: none;">
-                      <div class="footer_top poweredby" style="float: none; display: inline-block;">
-                        <a href="http://www.stada.org.sg/" target="_blank">
-                          <div class="upper" style="text-transform: uppercase; letter-spacing: 2px; color: white;">
-                            Backed & Powered by
-                          </div>
-                          <div class="lower">
-                            <img src="{{ URL::to('/') }}/img/stadafooter-min.png" style="max-height: 70px; margin-top: 5px;">
-                          </div>
-                        </a>
-                      </div>
-                    </li>
-                    <li class="copyright">Copyright &#9400; 2017 LAD Global. All Rights Reserved.</li>                    
+                    <li class="copyright">Copyright &#9400; <?php echo date("Y");?> GBI Sukawarna. All Rights Reserved.</li>            
                   </ul>
                 </div>
               </div>
