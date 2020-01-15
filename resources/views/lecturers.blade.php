@@ -30,61 +30,65 @@
                 <!-- Static Contents -->
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Dr. Tony Andrean</h2>
+                  <h2>Dr. Tonny Andrian. M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Stevanus Yordan S.E., M.Th</h2>
+                  <h2>Pdm. Stevannus Yordan. S.E., M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Junus Mulyana M.Th</h2>
+                  <h2>Pdm. Junus Mulyana. MPM., M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Budi Mulyono S.T., M.Th, MPM</h2>
+                  <h2>Pdm. Budi Muljono. S.T., M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Alexander Halim S.E., M.Th</h2>
+                  <h2>Pdm. Alexander Halim. S.E., M.Th.</h2>
                 </li>
               </ul>
 
               <ul class="price_nav aboutusleadershipteam" style="float: left; width: 100%">
                 <li data-aos="zoom-in-left">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Hendry Saleh S.T., M.Th</h2>
+                  <h2>Pdm. Hendry Saleh. S.T., M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-left">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Edimax Siauta S.Th</h2>
+                  <h2>Pdm. Edimax Siauta. S.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-left">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Mardi Susanto</h2>
+                  <h2>Pdm. Mardi Susanto.</h2>
                 </li>
                 <li data-aos="zoom-in-left">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Andreas Santosa S.S.</h2>
+                  <h2>Pdp. Andreas Santosa. S.S.</h2>
                 </li>
                 <li data-aos="zoom-in-left">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Lina Arief S.T.</h2>
+                  <h2>Pdp. Lina Arief Sudisman. S.T.</h2>
                 </li>
               </ul>
 
               <ul class="price_nav aboutusleadershipteam" style="float: left; width: 100%">
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Adi Darta S.Kom</h2>
+                  <h2>Pdp. Adi Darta. S.Kom.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>dr. Agustina Karyanto</h2>
+                  <h2>Pdp. Yogie Tazir. S.S., M.A.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
-                  <h2>Yogie Tazir S.S., M.A.</h2>
+                  <h2>dr. Agustina Karyanto.</h2>
+                </li>
+                <li data-aos="zoom-in-right">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
+                  <h2>Stefanus Maleakhi.</h2>
                 </li>
 
               </ul>

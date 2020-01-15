@@ -89,40 +89,5 @@
   <script src="{{ URL::to('/') }}/js/bootstrap-datepicker.js"></script> 
   <script src="{{ URL::to('/') }}/js/bootstrap-datepicker.min.js"></script>  
   <script src="{{ URL::to('/') }}/js/bootstrap-datetimepicker.min.js"></script>  
-
-  <!-- Google Sign-in Platform Library -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <!-- <script src="https://apis.google.com/js/api:client.js"></script> -->
-
-  <!-- Google Sign-in Custom Scripts -->
-  <!-- <script type="text/javascript">
-    var googleUser = {};
-    var startApp = function() {
-      gapi.load('auth2', function(){
-        // Retrieve the singleton for the GoogleAuth library and set up the client.
-        auth2 = gapi.auth2.init({
-          client_id: '798595003751-qrp7fstd7bvh46v0btvus1q3ev4125kd.apps.googleusercontent.com',
-          cookiepolicy: 'single_host_origin',
-          // Request scopes in addition to 'profile' and 'email'
-          //scope: 'additional_scope'
-        });
-        attachSignin(document.getElementById('customgooglesigninbutton'));
-      });
-    };
-
-    function attachSignin(element) {
-      // console.log(element.id);
-      auth2.attachClickHandler(element, {},
-          function(googleUser) {
-            document.getElementById('googleusername').innerText = googleUser.getBasicProfile().getName();
-          }, function(error) {
-            alert(JSON.stringify(error, undefined, 2));
-          });
-    }
-    
-  </script>
-  <script type="text/javascript">
-    startApp();
-  </script> -->
   </body>
 </html>

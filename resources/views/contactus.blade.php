@@ -1,3 +1,17 @@
+<style type="text/css">
+    .form-check-inline {
+        display: inline-block;
+    }
+    .contactusform > .smallerdiv > input[tabindex='1'] {
+        width: 32%;
+    }
+    @media(max-width: 767px) {
+        .contactusform > .smallerdiv > input[tabindex='1'] {
+            width: 100%;
+        }
+    }
+</style>
+
   <!-- standard and simple pop-up -->
   <div id="contactus-confirmation-modal" class="modal" style="z-index: 39; padding-top: 0%">
     <div class="account-modal-content">
@@ -52,12 +66,44 @@
               <div class="contactusform">
                 <div class="smallerdiv">
                   <input type="text" name="firstname" tabindex="1" placeholder="Nama" class="login_email" required>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <label class="form-check-label" for="inlineRadio1">(L)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <label class="form-check-label" for="inlineRadio2">(P)</label>
+                    </div>
                   <input type="text" name="lastname" tabindex="2" placeholder="TTL" class="login_email" required>
                   <input type="email" name="email" tabindex="3" placeholder="Email" class="login_email" required>
                   <input type="text" name="company" tabindex="4" placeholder="Alamat" class="login_email">
                   <input type="text" name="phone" tabindex="3" placeholder="No. HP/WA" class="login_email" id="contactus_phone">
                   <input type="text" name="interestedin" tabindex="6" placeholder="Status Pelayanan" class="login_email">
                   <textarea type="text" name="message" tabindex="7" placeholder="Tujuan Mendaftar" class="login_email" rows = 4 required></textarea>
+
+                  <div class="upload-btn-container">
+                      <div class="upload-btn-wrapper">
+                            <button class="btn">Upload Akte Baptis</button>
+                            <input type="file" class='up' name="akte" onchange="readURL(this);" />
+                            <span style="display: block; cursor: pointer;">No file selected</span>
+                      </div>
+                      <div class="upload-btn-wrapper">
+                            <button class="btn">Upload KTP</button>
+                            <input type="file" class='up' name="ktp" onchange="readURL(this);" />
+                            <span style="display: block; cursor: pointer;">No file selected</span>
+                      </div>
+                      <div class="upload-btn-wrapper">
+                            <button class="btn">Upload Ijazah</button>
+                            <input type="file" class='up' name="ijazah" onchange="readURL(this);" />
+                            <span style="display: block; cursor: pointer;">No file selected</span>
+                      </div>
+                      <div class="upload-btn-wrapper">
+                            <button class="btn">Upload Pas Foto (2 lembar)</button>
+                            <input type="file" class='up' name="pasfoto" multiple="" onchange="readURL(this);" />
+                            <span style="display: block;">No file selected</span>
+                      </div>
+                  </div>
+                  
                 </div>
                 <div class="submitdiv">
                   <button type="submit" name="contact_button" tabindex="9" class="signinmodalbutton2 hvr-underline-from-center" id = 'contactusbutton'>Submit</button>
@@ -95,5 +141,24 @@
     </div>
   </section>
   <!-- End our knowledge partner area -->  
+
+  <script type="text/javascript">
+      $(document).on('change','.up', function(){
+        console.log('asdf');
+            var names = [];
+            var length = $(this).get(0).files.length;
+            for (var i = 0; i < $(this).get(0).files.length; ++i) {
+                names.push($(this).get(0).files[i].name);
+            }
+            // $("input[name=file]").val(names);
+            if(length>2){
+              var fileName = names.join(', ');
+              $(this).closest('.upload-btn-wrapper').find('span').text(length+" files selected");
+            }
+            else{
+                $(this).closest('.upload-btn-wrapper').find('span').text(names);
+            }
+       });
+  </script>
 
   

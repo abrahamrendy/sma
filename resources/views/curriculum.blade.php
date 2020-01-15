@@ -20,7 +20,7 @@
                 <span class="month">1</span>
               </span>
               <h2>Pemulihan Pondok Daud</h2>
-              <p>Peserta didik dibekali DNA gereja dibawah pembinaan Ps. Niko Njotorahardjo sebagai Apostle of Third Pentacost, sehingga doa pujian dan penyembahan menjadi gaya hidup yang menghasilkan transformasi lingkungan sekitar peserta didik.</p>
+              <p>DNA GBI Gatot Soebroto Jakarta dibawah pembinaan Pdt. DR. Ir. Niko Njotorahardjo.</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -28,8 +28,8 @@
               <span class="date">
                 <span class="month">2</span>
               </span>
-              <h2>Liturgi Ibadah</h2>
-              <p>Peserta didik dibekali pedoman praktis penyelenggaraan ibadah mulai dari sekolah minggu, kebaktian umum, baptisan air, pernikahan, penghiburan & pelatihan memimpin pujian serta bermain gitar.</p>
+              <h2>Keselamatan</h2>
+              <p>Doktrin keselamatan yang Alkitabiah sebagai fondasi penting dalam berbagai pelayanan praktis yang akan dibangun diatasnya.</p>
             </div>
           </article>
           <article data-aos="fade-left">
@@ -37,8 +37,8 @@
               <span class="date">
                 <span class="month">3</span>
               </span>
-              <h2>Keselamatan</h2>
-              <p>Peserta didik dibekali doktrin keselamatan yang Alkitabiah sebagai fondasi penting dalam berbagai pelayanan praktis yang akan dibangun diatasnya.</p>
+              <h2>Pelayanan Keluarga</h2>
+              <p>Keterampilan praktis dalam konseling, parenting dan pelayanan bimbingan Pra dan Paska Nikah (BP2N).</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -46,8 +46,8 @@
               <span class="date">
                 <span class="month">4</span>
               </span>
-              <h2>Pelayanan Keluarga</h2>
-              <p>Peserta didik dibekali keterampilan praktis Alkitabiah dalam konseling, parenting dan pelayanan Bimbingan Pranikah (BPN).</p>
+              <h2>Pelayanan Anak</h2>
+              <p>Keterampilan dalam pelayanan anak.</p>
             </div>
           </article>
           <article data-aos="fade-left">
@@ -55,8 +55,8 @@
               <span class="date">
                 <span class="month">5</span>
               </span>
-              <h2>Pelayanan Anak</h2>
-              <p>Peserta didik dibekali skill dari para praktisi pelayanan anak untuk membawa anak-anak mengenal Yesus Kristus sebagai Tuhan dan Juruselamat sejak usia dini.</p>
+              <h2>Pelayanan Pemuda Remaja</h2>
+              <p>Keterampilan dalam pelayanan pemuda remaja.</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -64,8 +64,8 @@
               <span class="date">
                 <span class="month">6</span>
               </span>
-              <h2>Pelayanan Pemuda Remaja</h2>
-              <p>Peserta didik dibekali prinsip-prinsip praktis dari firman Tuhan dan pengalaman para pelayan pemuda remaja yang sudah berhasil sehingga dapat diterapkan di masa kini.</p>
+              <h2>Pelayanan Kesembuhan Batin</h2>
+              <p>Keterampilan melayani pemulihan batin dan gambar diri.</p>
             </div>
           </article>
           <article data-aos="fade-left">
@@ -73,8 +73,8 @@
               <span class="date">
                 <span class="month">7</span>
               </span>
-              <h2>Pelayanan Sosial</h2>
-              <p>Peserta didik dibekali dengan wawasan berbagai pelayanan yang menyentuh aspek sosial masyarakat sebagai bagian penggenapan Amanat Agung Tuhan Yesus.</p>
+              <h2>Pelayanan Pendampingan Lansia</h2>
+              <p>Pengetahuan praktis penanganan dan pendampingan Lansia.</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -82,8 +82,8 @@
               <span class="date">
                 <span class="month">8</span>
               </span>
-              <h2>Pelayanan Darurat Medik</h2>
-              <p>Peserta didik dibekali dokter dengan pengetahuan praktis pertolongan pertama kecelakaan sebelum membawa korban ke rumah sakit atau klinik kesehatan terdekat.</p>
+              <h2>Pelayanan Sosial</h2>
+              <p>Keterampilan dalam pelayanan kesosialan masyarakat.</p>
             </div>
           </article>
           <article data-aos="fade-left">
@@ -91,8 +91,8 @@
               <span class="date">
                 <span class="month">9</span>
               </span>
-              <h2>Penanganan dan Pendampingan Lansia</h2>
-              <p>Peserta didik dibekali dokter dengan pengetahuan praktis penanganan dan pendampingan lansia sehingga lansia dapat terlayani dengan efektif dan maksimal.</p>
+              <h2>Penanganan Darurat Medik</h2>
+              <p>Pengetahuan praktis pertolongan pertama pada kecelakaan dan darurat medik.</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -100,8 +100,8 @@
               <span class="date">
                 <span class="month">10</span>
               </span>
-              <h2>Penginjilan Pribadi</h2>
-              <p>Peserta didik dibekali prinsip-prinsip Alkitabiah dan praktis untuk memberitakan Injil secara pribadi kepada orang-orang yang belum lahir baru.</p>
+              <h2>Hermeneutika</h2>
+              <p>Ilmu yang mempelajari tentang interpretasi makna ayat Alkitab.</p>
             </div>
           </article>
           <article data-aos="fade-left">
@@ -110,7 +110,7 @@
                 <span class="month">11</span>
               </span>
               <h2>Apologetika</h2>
-              <p>Peserta didik dibekali ilmu sistematis yang mempertahankan dan menjelaskan iman dan kepercayaan Kristen sehingga kuat dalam iman sebagai fondasi pelayanan praktis.</p>
+              <p>Ilmu sistematis untuk menjelaskan dan mempertahankan iman Kristen.</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -118,8 +118,8 @@
               <span class="date">
                 <span class="month">12</span>
               </span>
-              <h2>Hermeneutika</h2>
-              <p>Peserta didik dibekali ilmu mempelajari tentang interpretasi makna sehingga mampu menafsirkan, memberi pemahaman, atau menerjemahkan ayat Alkitab dengan baik.</p>
+              <h2>Homelitika</h2>
+              <p>Ilmu berkhotbah secara terstruktur.</p>
             </div>
           </article>
           <article data-aos="fade-left">
@@ -127,8 +127,8 @@
               <span class="date">
                 <span class="month">13</span>
               </span>
-              <h2>Homelitika</h2>
-              <p>Peserta didik dibekali ilmu berkhotbah secara terstruktur sehingga diharapkan mampu menerangkan firman Tuhan dengan tajam, jelas dan berkuasa serta berdampak kekal.</p>
+              <h2>Kepemimpinan</h2>
+              <p>Ilmu kepemimpinan Kristen.</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -136,8 +136,8 @@
               <span class="date">
                 <span class="month">14</span>
               </span>
-              <h2>Kepemimpinan</h2>
-              <p>Peserta didik dibekali ilmu kepemimpinan Alkitabiah untuk meningkatkan kemampuan untuk mempengaruhi orang lain demi mencapai target (goal) yang telah ditentukan.</p>
+              <h2>Etika Kristen</h2>
+              <p>Prinsip-prinsip praktis sikap dan prilaku Kristiani.</p>
             </div>
           </article>
           <article data-aos="fade-left">
@@ -145,8 +145,8 @@
               <span class="date">
                 <span class="month">15</span>
               </span>
-              <h2>Etika Kristen</h2>
-              <p>Peserta didik dibekali ilmu yang membahas tentang apa yang baik dari sudut pandang Kekristenan sehingga dapat memilih & menjadi teladan kehendak Allah secara praktis.</p>
+              <h2>Pelayanan yang Berkuasa</h2>
+              <p>Prinsip-prinsip praktis pelayanan yang berkuasa (supranatural).</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -154,8 +154,8 @@
               <span class="date">
                 <span class="month">16</span>
               </span>
-              <h2>Pelayanan Yang Berkuasa</h2>
-              <p>Peserta didik dibekali prinsip-prinsip Alkitabiah untuk melayani dengan kuasa Roh Kudus sesuai karunia yang diberikan Allah sebagai manifestasi Amanat Agung Tuhan Yesus.</p>
+              <h2>Penginjilan Pribadi</h2>
+              <p>Prinsip-prinsip praktis untuk memberitakan Injil secara pribadi.</p>
             </div>
           </article>
           <article data-aos="fade-left">
@@ -163,8 +163,8 @@
               <span class="date">
                 <span class="month">17</span>
               </span>
-              <h2>Administrasi Gereja</h2>
-              <p>Peserta didik dibekali keterampilan catat-mencatat, surat-menyurat, pembukuan ringan, agenda, dan sebagainya dalam mengelola orpasional gereja dan pelayanan secara praktis.</p>
+              <h2>Liturgi</h2>
+              <p>Pedoman praktis penyelenggaraan ibadah mulai dari kebaktian umum, baptisan air, pernikahan dan kedukaan.</p>
             </div>
           </article>
           <article data-aos="fade-right">
@@ -172,8 +172,26 @@
               <span class="date">
                 <span class="month">18</span>
               </span>
+              <h2>Pelayanan Memimpin Pujian</h2>
+              <p>Pelatihan praktis bagaimana memimpin pujian dalam ibadah raya maupun ibadah khusus lainnya.</p>
+            </div>
+          </article>
+          <article data-aos="fade-left">
+            <div class="inner">
+              <span class="date">
+                <span class="month">19</span>
+              </span>
+              <h2>Administrasi Gereja</h2>
+              <p>Keterampilan dalam pengelolaan administrasi gerejawi.</p>
+            </div>
+          </article>
+          <article data-aos="fade-right">
+            <div class="inner">
+              <span class="date">
+                <span class="month">20</span>
+              </span>
               <h2>Perintisan Jemaat</h2>
-              <p>Peserta didik dibekali prinsip-prinsip Alkitabiah dari pengalaman praktis para pendiri gereja yang berhasil untuk dapat diterapkan dalam panggilan dan pelayanannya saat ini.</p>
+              <p>Prinsip-prinsip praktis dalam perintisan jemaat.</p>
             </div>
           </article>
         </div>

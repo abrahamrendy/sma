@@ -8,10 +8,6 @@
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta name="author" content="LAD Global Development Team">
 
-    <!-- Google Sign-in Client ID -->
-    {{-- <meta name="google-signin-client_id" content="798595003751-qrp7fstd7bvh46v0btvus1q3ev4125kd.apps.googleusercontent.com"> --}}
-    <meta name="google-signin-client_id" content="306208290680-9gvmgv8hfrl2lhl5kfhimphd9u1l9ftf.apps.googleusercontent.com">
-
     <!-- CSRF -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -59,20 +55,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="{{ URL::to('/') }}/js/jquery.min.js"></script>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96009968-1"></script>
-    <script src="https://kit.fontawesome.com/c0b43bff53.js" crossorigin="anonymous"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-     gtag('config', 'UA-96009968-1');
-    </script>
-    <!-- <script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous"></script> -->
     <script type="text/javascript">
       var base_url = "{{ URL::to('/') }}";
       var s3_url = "{{ env('S3_URL')}}";
@@ -88,14 +70,6 @@
   <!-- =========================
     //////////////This Theme Design and Developed //////////////////////
     //////////// by www.wpfreeware.com======================--> 
-
-  <!-- FB Login Suspended -->
-  <?php if (Session::has('fb_login_suspended')): ?>
-    <script type="text/javascript">
-      alert("{!! session('fb_login_suspended') !!}");
-    </script>
-    <?php endif ?>
-  <!-- End of FB Login Suspended -->
 
   <!-- Reset password -->
   <?php if (Session::has('reset_password_ok')): ?>

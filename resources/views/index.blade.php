@@ -67,8 +67,8 @@
             <div class="browsemore">
               <!-- <h2 id="index_request_title">Corporate Solutions</h2> -->
               <!-- <h3 class="question">Did not find what you are looking for?</h3> -->
-              <h3 class="lower">Sukawarna Mission Academy (SMA) adalah wadah pelatihan untuk meningkatkan kapabilitas para pelayan Tuhan yang siap pakai dan serba bisa dalam menggenapi Amanat Agung Tuhan Yesus. SMA berupaya menjawab kebutuhan akan pendidikan praktis dari para pengajar yang berlatar belakang pengalaman di bidangnya sehingga dapat lebih maksimal dalam mendidik para peserta didik.</h3>
-              <h3 class="lower">Di masa pencurahan Roh Kudus terakhir dan terbesar yang sering diistilahkan sebagai era Pentakosta ke-3 ini, SMA menjadi sarana praktis untuk memperlengkapi dan mengutus para pelayan Tuhan yang rindu terlibat langsung penggenapan Amanat Agung Tuhan Yesus di lapangan.</h3>
+              <h3 class="lower">Di era Pentakosta ke-3 dimana Roh Kudus dicurahkan secara luar biasa, akan terjadi kebangunan rohani yang dahsyat yang akan mengakibatkan terjadinya penuaian jiwa yang terbesar dan terakhir sampai kedatangan Tuhan Yesus untuk kali yang kedua. Oleh karena itu  KMA hadir untuk mempersiapkan para pelayan Tuhan yang terpanggil untuk terlibat langsung dalam penggenapan Amanat Agung Tuhan Yesus.</h3>
+              <h3 class="lower">KMA merupakan wadah pelatihan yang dilengkapi dengan pengajar-pengajar yang memiliki latar belakang pendidikan dan pengalaman yang mumpuni di bidangnya masing-masing, sehingga menjadikan KMA sebagai wadah yang unggul dalam melatih para pelayan Tuhan untuk memiliki keterampilan praktis dalam pelayanan gerejawi.</h3>
             </div>
           </div>
         </div>
