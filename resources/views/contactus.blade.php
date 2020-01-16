@@ -62,6 +62,7 @@
               <h2>REGISTER</h2>
               <hr class="title_hr">
             </div>
+            <?php if (!isset($output)) {?>
             <form id="contactusform" data-aos="fade-up" action="{{ route('register_submit') }}" method="POST" >
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="contactusform">
@@ -75,7 +76,7 @@
                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
                       <label class="form-check-label" for="inlineRadio2">(P)</label>
                     </div>
-                  <input type="text" name="lastname" tabindex="2" placeholder="TTL" class="login_email" required>
+                  <input type="text" name="lastname" tabindex="2" placeholder="TTL" class="login_email datepicker-normal" required>
                   <input type="email" name="email" tabindex="3" placeholder="Email" class="login_email" required>
                   <input type="text" name="company" tabindex="4" placeholder="Alamat" class="login_email">
                   <input type="text" name="phone" tabindex="3" placeholder="No. HP/WA" class="login_email" id="contactus_phone">
@@ -111,6 +112,7 @@
                 </div>
               </div>
             </form>
+          <?php } ?>
           </div>
         </div>
       </div>
