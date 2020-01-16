@@ -62,7 +62,8 @@
               <h2>REGISTER</h2>
               <hr class="title_hr">
             </div>
-            <form id="contactusform" data-aos="fade-up">
+            <form id="contactusform" data-aos="fade-up" action="{{ route('register_submit') }}" method="POST" >
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="contactusform">
                 <div class="smallerdiv">
                   <input type="text" name="firstname" tabindex="1" placeholder="Nama" class="login_email" required>

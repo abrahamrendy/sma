@@ -199,84 +199,84 @@ if (addcustomizedcoursebtn != null) {
 }
 
 // When submit in contact us clicked
-if (contactusbutton != null) {
-    contactusbutton.onclick = function(event) {
-        // event.preventDefault();
-        if ($('#contactusform')[0].checkValidity()) {
-            event.preventDefault();
-            var firstname = $('#contactusform input[name="firstname"]').val();
-            var lastname = $('#contactusform input[name="lastname"]').val();
-            var email = $('#contactusform input[name="email"]').val();
-            var company = $('#contactusform input[name="company"]').val();
-            var country = $('#contactusform select[name="country"]').val();
-            var phone = $('#contactusform input[name="phone"]').val();
-            var interested_in = $('#contactusform input[name="interestedin"]').val();
-            var message = $('#contactusform input[name="message"]').val();
+// if (contactusbutton != null) {
+//     contactusbutton.onclick = function(event) {
+//         // event.preventDefault();
+//         if ($('#contactusform')[0].checkValidity()) {
+//             event.preventDefault();
+//             var firstname = $('#contactusform input[name="firstname"]').val();
+//             var lastname = $('#contactusform input[name="lastname"]').val();
+//             var email = $('#contactusform input[name="email"]').val();
+//             var company = $('#contactusform input[name="company"]').val();
+//             var country = $('#contactusform select[name="country"]').val();
+//             var phone = $('#contactusform input[name="phone"]').val();
+//             var interested_in = $('#contactusform input[name="interestedin"]').val();
+//             var message = $('#contactusform input[name="message"]').val();
 
-            var _token = $('meta[name="csrf-token"]').attr('content');
+//             var _token = $('meta[name="csrf-token"]').attr('content');
 
-            if (firstname != '' && lastname != '' && email != '' && message != '') {
-                // disable button
-                $("#contactusbutton").prop('disabled', true);
+//             if (firstname != '' && lastname != '' && email != '' && message != '') {
+//                 // disable button
+//                 $("#contactusbutton").prop('disabled', true);
 
-                var contact = $.ajax(
-                                {
-                                    url: base_url + '/contactus_submit',
-                                    type:'POST', //data type
-                                    dataType : "json",
-                                    headers: {
-                                        'X-CSRF-TOKEN': _token
-                                    },
-                                    data: {cu_firstname:firstname, 
-                                            cu_lastname:lastname, 
-                                            cu_email:email, 
-                                            cu_company:company,
-                                            cu_country:country,
-                                            cu_phone:phone,
-                                            cu_interested_in:interested_in,
-                                            cu_message:message,
-                                            _token:_token},
-                                    success:function(data)
-                                    {
-                                        if (data.info == "success") 
-                                        {   // Contact successful 
-                                            show_contactusconfirmation_modal();
-                                            // empty contactus fields after confirmation shows
-                                            setTimeout(
-                                                        function() 
-                                                        {
+//                 var contact = $.ajax(
+//                                 {
+//                                     url: base_url + '/contactus_submit',
+//                                     type:'POST', //data type
+//                                     dataType : "json",
+//                                     headers: {
+//                                         'X-CSRF-TOKEN': _token
+//                                     },
+//                                     data: {cu_firstname:firstname, 
+//                                             cu_lastname:lastname, 
+//                                             cu_email:email, 
+//                                             cu_company:company,
+//                                             cu_country:country,
+//                                             cu_phone:phone,
+//                                             cu_interested_in:interested_in,
+//                                             cu_message:message,
+//                                             _token:_token},
+//                                     success:function(data)
+//                                     {
+//                                         if (data.info == "success") 
+//                                         {   // Contact successful 
+//                                             show_contactusconfirmation_modal();
+//                                             // empty contactus fields after confirmation shows
+//                                             setTimeout(
+//                                                         function() 
+//                                                         {
                                                             
-                                                            $('#contactusform input[name="firstname"]').val('');
-                                                            $('#contactusform input[name="lastname"]').val('');
-                                                            $('#contactusform input[name="email"]').val('');
-                                                            $('#contactusform input[name="company"]').val('');
-                                                            $('#contactusform select[name="country"]').val('');
-                                                            $('#contactusform input[name="phone"]').val('');
-                                                            $('#contactusform input[name="interestedin"]').val('');
-                                                            $('#contactusform input[name="message"]').val('');
-                                                        }, 300);  
-                                        }
-                                        else
-                                        {   // Contact error
-                                            alert(data.message);
-                                        }
-                                        // Re-enable button
-                                        $("#contactusbutton").prop('disabled', false);
-                                    },
-                                    error:function(data)
-                                    {
-                                        alert("Failed to contact us. Please try again later.");
+//                                                             $('#contactusform input[name="firstname"]').val('');
+//                                                             $('#contactusform input[name="lastname"]').val('');
+//                                                             $('#contactusform input[name="email"]').val('');
+//                                                             $('#contactusform input[name="company"]').val('');
+//                                                             $('#contactusform select[name="country"]').val('');
+//                                                             $('#contactusform input[name="phone"]').val('');
+//                                                             $('#contactusform input[name="interestedin"]').val('');
+//                                                             $('#contactusform input[name="message"]').val('');
+//                                                         }, 300);  
+//                                         }
+//                                         else
+//                                         {   // Contact error
+//                                             alert(data.message);
+//                                         }
+//                                         // Re-enable button
+//                                         $("#contactusbutton").prop('disabled', false);
+//                                     },
+//                                     error:function(data)
+//                                     {
+//                                         alert("Failed to contact us. Please try again later.");
 
-                                        // Re-enable button
-                                        $("#contactusbutton").prop('disabled', false);
-                                    }
-                                });
-            } else {
-                alert("You haven't input all of the required fields.");
-            }
-        }
-    }
-}
+//                                         // Re-enable button
+//                                         $("#contactusbutton").prop('disabled', false);
+//                                     }
+//                                 });
+//             } else {
+//                 alert("You haven't input all of the required fields.");
+//             }
+//         }
+//     }
+// }
 
 // When the user clicks on the add-course-online buttons, open the add-course-online modal 
 if (addonlinecoursebtn != null) {

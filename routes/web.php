@@ -22,6 +22,7 @@ Route::get('/privacypolicy', 'HomeController@privacypolicy');
 Route::get('/termsofservice', 'HomeController@termsofservice');
 Route::get('/contactus', 'HomeController@contactus');
 Route::get('/register', 'HomeController@register');
+Route::post('/register_submit', 'HomeController@register_submit')->name('register_submit');
 Route::post('/contactus_submit', 'HomeController@contactus_submit');
 Route::get('/aboutus', 'HomeController@aboutus');
 Route::get('/lecturers', 'HomeController@aboutus');
