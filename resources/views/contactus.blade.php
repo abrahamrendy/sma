@@ -63,24 +63,24 @@
               <hr class="title_hr">
             </div>
             <?php if (!isset($output)) {?>
-            <form id="contactusform" data-aos="fade-up" action="{{ route('register_submit') }}" method="POST" >
+            <form id="contactusform" data-aos="fade-up" action="{{ route('register_submit') }}" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="contactusform">
                 <div class="smallerdiv">
                   <input type="text" name="firstname" tabindex="1" placeholder="Nama" class="login_email" required>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="L">
                       <label class="form-check-label" for="inlineRadio1">(L)</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="P">
                       <label class="form-check-label" for="inlineRadio2">(P)</label>
                     </div>
-                  <input type="text" name="lastname" tabindex="2" placeholder="TTL" class="login_email datepicker-normal" required>
+                  <input type="text" name="ttl" tabindex="2" placeholder="TTL" class="login_email datepicker-normal" required>
                   <input type="email" name="email" tabindex="3" placeholder="Email" class="login_email" required>
-                  <input type="text" name="company" tabindex="4" placeholder="Alamat" class="login_email">
+                  <input type="text" name="alamat" tabindex="4" placeholder="Alamat" class="login_email">
                   <input type="text" name="phone" tabindex="3" placeholder="No. HP/WA" class="login_email" id="contactus_phone">
-                  <input type="text" name="interestedin" tabindex="6" placeholder="Status Pelayanan" class="login_email">
+                  <input type="text" name="statuspelayanan" tabindex="6" placeholder="Status Pelayanan" class="login_email">
                   <textarea type="text" name="message" tabindex="7" placeholder="Tujuan Mendaftar" class="login_email" rows = 4 required></textarea>
 
                   <div class="upload-btn-container">

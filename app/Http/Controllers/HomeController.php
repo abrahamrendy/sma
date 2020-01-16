@@ -346,108 +346,42 @@ class HomeController extends Controller
             'code' => 'x' 
             );
 
-        $text_regex = "/^[ A-Za-zÀ-ÿ0-9_#!?.,-]+$/";
-        $rules_normal = array(
-            'firstname' => ['required', 'min:0', 'max:50', 'regex:'.$text_regex],
-            'lastname' => ['required', 'min:0', 'max:50', 'regex:'.$text_regex],
-            'email' => 'required|email|max:100',
-            'company' => ['nullable', 'min:3', 'max:50', 'regex:'.$text_regex],
-            'country' => 'required|alpha|min:1|max:5',
-            'phone' => 'nullable|max:20|regex:/^\+?\d+$/',
-            'interested_in' => ['nullable', 'min:3', 'max:255', 'regex:'.$text_regex],
-            'message' => ['required', 'min:3', 'max:255', 'regex:'.$text_regex]
-            );
-        $messages_normal = array(
-            'firstname.required' => 'The first name is required.',
-            'firstname.min' => 'The first name must be more than :min characters long.',
-            'firstname.max' => 'The first name must be less than :max characters long.',
-            'firstname.regex' => 'The first name must be in alpha-numeric characters or accented characters or dashes and underscores and spaces.',
+        if ($request->hasFile('akte')){
+            $s3 = Storage::disk('s3');
+            $photoName = time().'.'.$request->akte->getClientOriginalExtension();
+            $path = $request->profpic->storeAs('images/'.$userid.'/profpic', $photoName, 's3');
+            $s3->setVisibility($path, 'public');
+            // $s3->put('images/'.$userid.'/profpic', $photoName, 'public');
+            $s3->setVisibility($path,'public');
+            $update['photo'] = $path;
+        }
+        
+        $new_contactus = array(
+            'name' => strip_tags($request->input('firstname')),
+            'gender' => strip_tags($request->input('gender')),
+            'ttl' => strip_tags($request->input('ttl')),
+            'email' => strip_tags($request->input('email')),
+            'alamat' => strip_tags($request->input('alamat')),
+            'statuspelayanan' => strip_tags($request->input('statuspelayanan')),
+            'message' => strip_tags($request->input('message')),
+            'created_time' => date("Y-m-d H:i:s"),
+            ); 
 
-            'lastname.required' => 'The last name is required.',
-            'lastname.min' => 'The last name must be more than :min characters long.',
-            'lastname.max' => 'The last name must be less than :max characters long.',
-            'lastname.regex' => 'The last name must be in alpha-numeric characters or accented characters or dashes and underscores and spaces.',
+        $insertid = DB::table('contactus')->insertGetId($new_contactus);
+        if ($insertid) 
+        {   # contactus created
+            $output['info'] = 'success';
+            $output['message'] = "Your message has been sent.";
+            $output['code'] = '0';         
 
-            'email.required' => 'The email is required.',
-            'email.email' => 'The email must be in a valid email format.',
-            'email.max' => 'The email must be less than :max characters long.',
-
-            'company.min' => 'The Company Name must be more than :min characters long.',
-            'company.max' => 'The Company Name must be less than :max characters long.',
-            'company.regex' => 'The Company Name must be in alpha-numeric characters or accented characters or dashes and underscores and spaces.',
-
-            'country.required' => 'The country code is required.',
-            'country.alpha' => 'The country code must only contain alphabetic characters.',
-            'country.min' => 'The country code must be more than :min characters long.',
-            'country.max' => 'The country code must be less than :max characters long.',
-
-            'phone.max' => 'The phone number must be less than :max characters long.',
-            'phone.regex' => 'The account phone number be in a valid phone number format.',
-
-            'signup_password.required' => 'The password is required.',
-            'signup_password.min' => 'The password must be more than :min characters long.',
-            'signup_password.max' => 'The password must be less than :max characters long.',
-
-            'interested_in.min' => 'The interest must be more than :min characters long.',
-            'interested_in.max' => 'The interest must be less than :max characters long.',
-            'interested_in.regex' => 'The interest must be in alpha-numeric characters or accented characters or dashes and underscores and spaces.',
-
-            'message.required' => 'The message is required.',
-            'message.min' => 'The message must be more than :min characters long.',
-            'message.max' => 'The message must be less than :max characters long.',
-            'message.regex' => 'The message must be in alpha-numeric characters or accented characters or dashes and underscores and spaces.'
-            );
-        $validator_normal = Validator::make($request->only('firstname',
-                                                            'lastname',
-                                                            'email',
-                                                            'company',
-                                                            'country',
-                                                            'phone',
-                                                            'interested_in',
-                                                            'message'), $rules_normal, $messages_normal);
-        if ($validator_normal->fails()) 
-        {   # Validation failed 
-            $errors = $validator_normal->errors();
-            $message = $errors->first();
-
-            $output['message'] = $message;
-            $output['code'] = '1';
+                              
         }
         else
-        {   # Validation passed
-            $new_contactus = array(
-                'first_name' => strip_tags($request->input('firstname')),
-                'last_name' => strip_tags($request->input('lastname')),
-                'email' => strip_tags($request->input('email')),
-                'country' => strip_tags($request->input('country')),
-                'message' => strip_tags($request->input('message')),
-                'created_time' => date("Y-m-d H:i:s"),
-                ); 
-            if ($request->input('company')) {
-                $new_contactus['company'] = strip_tags($request->input('company'));
-            }
-            if ($request->input('phone')) {
-                $new_contactus['phone'] = strip_tags($request->input('phone'));
-            }
-            if ($request->input('interested_in')) {
-                $new_contactus['interested_in'] = strip_tags($request->input('interested_in'));
-            }
-
-            $insertid = DB::table('contactus')->insertGetId($new_contactus);
-            if ($insertid) 
-            {   # contactus created
-                $output['info'] = 'success';
-                $output['message'] = "Your message has been sent.";
-                $output['code'] = '0';         
-
-                                  
-            }
-            else
-            {   # user not created
-                $output['message'] = "Unable to process your message. Please try again later.";
-                $output['code'] = '2';
-            }
+        {   # user not created
+            $output['message'] = "Unable to process your message. Please try again later.";
+            $output['code'] = '2';
         }
+        
 
         return $this->register($output);
 
