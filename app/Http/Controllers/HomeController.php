@@ -9,6 +9,8 @@ use App\Homepage;
 use Validator;
 use Session;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class HomeController extends Controller
 {
@@ -347,24 +349,44 @@ class HomeController extends Controller
             );
 
         if ($request->hasFile('akte')){
-            $s3 = Storage::disk('s3');
-            $photoName = time().'.'.$request->akte->getClientOriginalExtension();
-            $path = $request->profpic->storeAs('images/'.$userid.'/profpic', $photoName, 's3');
-            $s3->setVisibility($path, 'public');
-            // $s3->put('images/'.$userid.'/profpic', $photoName, 'public');
-            $s3->setVisibility($path,'public');
-            $update['photo'] = $path;
+            $photoname = $request->input('firstname').'_AKTE';
+            $addPhoto = $photoname.'.'.$request->file('akte')->getClientOriginalExtension();
+            $akte = Storage::putFileAs('akte', $request->file('akte'), $addPhoto);
+        }
+
+        if ($request->hasFile('ktp')){
+            $photoname = $request->input('firstname').'_KTP';
+            $addPhoto = $photoname.'.'.$request->file('ktp')->getClientOriginalExtension();
+            $ktp = Storage::putFileAs('ktp', $request->file('ktp'), $addPhoto);
+        }
+
+        if ($request->hasFile('ijazah')){
+            $photoname = $request->input('firstname').'_IJAZAH';
+            $addPhoto = $photoname.'.'.$request->file('ijazah')->getClientOriginalExtension();
+            $ijazah = Storage::putFileAs('ijazah', $request->file('ijazah'), $addPhoto);
+        }
+
+        if ($request->hasFile('pasfoto')){
+            $photoname = $request->input('firstname').'_PASFOTO';
+            $addPhoto = $photoname.'.'.$request->file('pasfoto')->getClientOriginalExtension();
+            $pasfoto = Storage::putFileAs('pasfoto', $request->file('pasfoto'), $addPhoto);
         }
         
         $new_contactus = array(
             'name' => strip_tags($request->input('firstname')),
             'gender' => strip_tags($request->input('gender')),
-            'ttl' => strip_tags($request->input('ttl')),
+            'ttl' => date("Y-m-d H:i:s", strtotime(strip_tags($request->input('ttl')))),
+            'phone' => strip_tags($request->input('phone')),
             'email' => strip_tags($request->input('email')),
             'alamat' => strip_tags($request->input('alamat')),
             'statuspelayanan' => strip_tags($request->input('statuspelayanan')),
             'message' => strip_tags($request->input('message')),
+            'akte' => $akte,
+            'ktp' => $ktp,
+            'ijazah' => $ijazah,
+            'pasfoto' => $pasfoto,
             'created_time' => date("Y-m-d H:i:s"),
+            'status' => 0,
             ); 
 
         $insertid = DB::table('contactus')->insertGetId($new_contactus);

@@ -86,22 +86,22 @@
                   <div class="upload-btn-container">
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload Akte Baptis</button>
-                            <input type="file" class='up' name="akte" onchange="readURL(this);" />
+                            <input type="file" class='up' name="akte" required onchange="readURL(this);" />
                             <span style="display: block; cursor: pointer;">No file selected</span>
                       </div>
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload KTP</button>
-                            <input type="file" class='up' name="ktp" onchange="readURL(this);" />
+                            <input type="file" class='up' name="ktp" required onchange="readURL(this);" />
                             <span style="display: block; cursor: pointer;">No file selected</span>
                       </div>
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload Ijazah</button>
-                            <input type="file" class='up' name="ijazah" onchange="readURL(this);" />
+                            <input type="file" class='up' name="ijazah" required onchange="readURL(this);" />
                             <span style="display: block; cursor: pointer;">No file selected</span>
                       </div>
                       <div class="upload-btn-wrapper">
-                            <button class="btn">Upload Pas Foto (2 lembar)</button>
-                            <input type="file" class='up' name="pasfoto" multiple="" onchange="readURL(this);" />
+                            <button class="btn">Upload Pas Foto</button>
+                            <input type="file" class='up' name="pasfoto" required onchange="readURL(this);" />
                             <span style="display: block;">No file selected</span>
                       </div>
                   </div>
@@ -121,7 +121,7 @@
   <!-- End special quote -->
 
   <!-- start our knowledge partner area -->
-  <section id="testimonial">
+  <section id="testimonial" class="hidden">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">

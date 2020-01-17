@@ -9,7 +9,7 @@
                 <div class="single_footer_top">
                   <ul class="footer_small">
                     <li style="margin-top: 0px;"><img class="ladicon" src="{{ URL::to('/') }}/img/KATARTIZO LOGO-01.png" alt="img"></li>
-                    <li>
+                    <li class="hidden">
                       <ul class="single_footer_top_sublist">
                         <li><a target="_blank" href="https://www.facebook.com/LAD-252603775224485/"><img src="{{ URL::to('/') }}/img/footer/facebook-min.png" alt="img"></a></li>
                         <li><a target="_blank" href="https://twitter.com/LADGlobal"><img src="{{ URL::to('/') }}/img/footer/twitter-min.png" alt="img"></a></li>

@@ -27,7 +27,7 @@
               <ul class="team_nav">
                 <li data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-offset="200">
                   <div class="team_img">
-                    <i class="fas fa-level-up-alt purposes_icon"></i>
+                    <i class="fa fa-level-up purposes_icon"></i>
                   </div>
                   <div class="team_content">
                     <h4>Upgrading</h4>
@@ -37,7 +37,7 @@
 
                 <li data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-offset="200">
                   <div class="team_img">
-                    <i class="fas fa-globe-asia purposes_icon"></i>
+                    <i class="fa fa-globe purposes_icon"></i>
                   </div>
                   <div class="team_content">
                     <h4>Commissioning</h4>
@@ -113,7 +113,7 @@
                 <h3>Rp 1.000.000,-</h3>
                 <p style="font-weight: 100">(Belum termasuk biaya wisuda Rp 250.000,-)</p>
 
-                <a class="slider_btn hvr-icon-up" href="{{ url('/register') }}" style="font-weight: 600;margin-top: 20px; font-size: 20px;">Register Now<i class="fas fa-user-plus hvr-icon" style="margin-left: 15px;"></i></a> 
+                <a class="slider_btn hvr-icon-up" href="{{ url('/register') }}" style="font-weight: 600;margin-top: 20px; font-size: 20px;">Register Now<i class="fa fa-plus-circle hvr-icon" style="margin-left: 15px;"></i></a> 
               </div>
             </div>
           </div>
