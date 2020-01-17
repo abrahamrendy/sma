@@ -393,7 +393,7 @@ class HomeController extends Controller
         if ($insertid) 
         {   # contactus created
             $output['info'] = 'success';
-            $output['message'] = "Your message has been sent.";
+            $output['message'] = "Thank you! You've completed your registration proccess.";
             $output['code'] = '0';         
 
                               

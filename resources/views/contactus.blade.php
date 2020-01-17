@@ -59,8 +59,21 @@
         <div class="col-lg-12 col-md-12 wow fadeIn" data-wow-duration="1s">
           <div class="trustedby_area">
             <div class="team_title" style="margin-bottom: 3%;">
-              <h2>REGISTER</h2>
-              <hr class="title_hr">
+                <?php if (!isset($output)) {?>
+                  <h2>REGISTER</h2>
+                  <hr class="title_hr">
+                <?php } else { ?>
+                    <?php if ($output['code'] == '0') {?>
+                        <h2>Thank you!</h2>
+                        <h3>You've completed your registration proccess.</h3>
+                        <h3>You can complete your payment <a href="{{ route ('confirm_payment')}}" style="font-weight: 500; color: #A37A2D">here</a></h3>
+                    <?php } else { ?>
+                        <?php if ($output['code'] == '2') {?>
+                            <h2>Sorry an error occured!</h2>
+                            <h3>You can re-register <a href="{{ route ('register')}}" style="font-weight: 500; color: #A37A2D">here</a>!</h3>
+                        <?php } ?>
+                    <?php } ?>
+                <?php } ?>
             </div>
             <?php if (!isset($output)) {?>
             <form id="contactusform" data-aos="fade-up" action="{{ route('register_submit') }}" method="POST" enctype="multipart/form-data">
