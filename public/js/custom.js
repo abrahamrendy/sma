@@ -594,26 +594,6 @@ $(document).ready(function() {
   });
   // END
 
-  //GET TOTAL PROPOSAL FOR NOTIFICATION SIDEBAR
-  $.ajax(
-        {
-          url: base_url + '/dashboard/countallproposal/' + session_id,
-          type:'GET',
-          dataType : "json",
-          data: {},
-          success:function(data)
-          {
-            var total = data[0].total_proposal_applied;
-            if (total > 0) {
-              $('.sidebar-notif').removeClass('hide');
-              $('.sidebar-notif').text(total);
-            } else {
-              $('.sidebar-notif').addClass('hide');
-            }
-          }
-        });
-  // END
-
   //make progress bar move
   move();
 
