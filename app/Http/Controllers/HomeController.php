@@ -164,6 +164,63 @@ class HomeController extends Controller
         
     }
 
+    public function confirm_payment($output = array())
+    {
+        if ($output == null) {
+            return view('header', ['registerflag' => true])->withTitle('Payment Confirmation - KATARTIZO Mission Academy').
+                view('confirmpayment').
+                view('footer');    
+        } else {
+            return view('header', ['registerflag' => true])->withTitle('Payment Confirmation - KATARTIZO Mission Academy').
+                view('confirmpayment', ['output' => $output]).
+                view('footer');
+        }
+        
+    }
+
+    public function submit_confirm_payment(Request $request) {
+
+        $output = array(
+            'info' => 'error',
+            'message' => 'Unable to contact us. Please try again later.',
+            'code' => 'x' 
+            );
+        
+        if ($request->hasFile('bukti')){
+            $photoname = $request->input('firstname').'_PASFOTO';
+            $addPhoto = $photoname.'.'.$request->file('bukti')->getClientOriginalExtension();
+            $bukti = Storage::putFileAs('bukti', $request->file('bukti'), $addPhoto);
+        }
+
+        $new_confirm_payment = array(
+            'name' => strip_tags($request->input('firstname')),
+            'ttl' => date("Y-m-d H:i:s", strtotime(strip_tags($request->input('ttl')))),
+            'phone' => strip_tags($request->input('phone')),
+            'email' => strip_tags($request->input('email')),
+            'bukti' => $bukti,
+            'created_at' => date("Y-m-d H:i:s"),
+        ); 
+
+        $insertid = DB::table('paymentconfirmation')->insertGetId($new_confirm_payment);
+
+        if ($insertid) 
+        {   # contactus created
+            $output['info'] = 'success';
+            $output['message'] = "Thank you! You've completed your registration proccess.";
+            $output['code'] = '0';         
+
+                              
+        }
+        else
+        {   # user not created
+            $output['message'] = "Unable to process your message. Please try again later.";
+            $output['code'] = '2';
+        }
+        
+
+        return $this->confirm_payment($output);
+    }
+
     /**
     * This function is used to handle contact us form
     */
@@ -342,6 +399,7 @@ class HomeController extends Controller
 
     public function register_submit(Request $request)
     {
+
         $output = array(
             'info' => 'error',
             'message' => 'Unable to contact us. Please try again later.',
