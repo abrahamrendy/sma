@@ -1,3 +1,28 @@
+  <style type="text/css">
+    .info-box {
+      background-image: url('{{ URL::to('/') }}/img/register.jpg'); 
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (max-width: 767px) {
+      .info-text-container h2, .info-text-container h3, .info-text-container .additional-info  {
+        color: #212529;
+      }
+
+      .slideimage {
+        max-height: 350px !important;
+        /* max-height: 180px !important; */
+      }
+
+      #sliderSection.homepageslider {
+        /* min-height: 200px; */
+        min-height: 350px;
+      }
+    }
+
+  </style>
+
   <!-- Start Homepage slider section -->
   <section id="sliderSection" class="homepageslider">  
     <div class="mainslider_area" style="height: 100% !important; background-color: #2D2D2D">
@@ -101,17 +126,16 @@
           </div>
 
           <div class="align-center" data-aos = "flip-up">
-            <div class="info-box" style="background-image: url('{{ URL::to('/') }}/img/register.jpg'); background-size: cover;
-    background-position: center;">
+            <div class="info-box">
 
-              <div class="info-text-container" data-aos ="fade-in" data-aos-duration="2000">
+              <div class="info-text-container">
                 <h2>LOCATION</h2>
                 <h3>GBI Sukawarna cabang Aruna</h3>
                 <h3>Pkl 18.00 - 22.00 WIB</h3>
                 <br>
                 <h2>TUITION FEE</h2>
                 <h3>Rp 1.000.000,-</h3>
-                <p style="font-weight: 100">(Belum termasuk biaya wisuda Rp 250.000,-)</p>
+                <p class= "additional-info" style="font-weight: 100">(Belum termasuk biaya wisuda Rp 250.000,-)</p>
 
                 <a class="slider_btn hvr-icon-up" href="{{ url('/register') }}" style="font-weight: 600;margin-top: 20px; font-size: 20px;">Register Now<i class="fa fa-plus-circle hvr-icon" style="margin-left: 15px;"></i></a> 
               </div>
@@ -119,11 +143,11 @@
           </div>
 
           <div class="align-center learn-more-container" data-aos="fade-right">
-            <a class="slider_btn hvr-bounce-to-bottom" href="http://localhost/sma/public/lecturers">Learn More About Our Lecturers</a>
+            <a class="slider_btn hvr-bounce-to-bottom" href="{{ url('/lecturers') }}">Learn More About Our Lecturers</a>
           </div>
 
           <div class="align-center learn-more-container" data-aos="fade-left">
-            <a class="slider_btn hvr-bounce-to-bottom" href="http://localhost/sma/public/curriculum">Learn More About Our Curriculum</a>
+            <a class="slider_btn hvr-bounce-to-bottom" href="{{ url('/curriculum') }}">Learn More About Our Curriculum</a>
           </div>
         </div>
       </div>

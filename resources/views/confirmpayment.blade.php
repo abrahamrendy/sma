@@ -38,6 +38,9 @@
             <?php if (!isset($output)) {?>
             <form id="contactusform" data-aos="fade-up" action="{{ route('submit_confirm_payment') }}" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <h3 style="font-weight: 300">Pembayaran dapat dilakukan melalui transfer via bank BCA</h3>
+                <h3 style="font-weight: 300">dengan nomor rekening 5150-383-473 a/n : Yogie Tazir atau Christy Kartika Isni</h3>
+
               <div class="contactusform">
                 <div class="smallerdiv">
                   <input type="text" name="firstname" tabindex="1" placeholder="Nama" class="login_email" required>
