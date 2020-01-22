@@ -129,7 +129,9 @@
             <div class="info-box">
 
               <div class="info-text-container">
-                <h2>LOCATION</h2>
+                <h2>DATE & LOCATION</h2>
+                <h3>Dimulai 17 Februari 2020</h3>
+                <h3>Setiap Senin</h3>
                 <h3>GBI Sukawarna cabang Aruna</h3>
                 <h3>Pkl 18.30 - 21.30 WIB</h3>
                 <br>

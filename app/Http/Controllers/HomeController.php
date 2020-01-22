@@ -429,37 +429,48 @@ class HomeController extends Controller
             $addPhoto = $photoname.'.'.$request->file('pasfoto')->getClientOriginalExtension();
             $pasfoto = Storage::putFileAs('pasfoto', $request->file('pasfoto'), $addPhoto);
         }
+
+        $email = strip_tags($request->input('email'));
+        $exists = DB::table('contactus')->where('email', $email)->first();
+        if (!$exists) {
         
-        $new_contactus = array(
-            'name' => strip_tags($request->input('firstname')),
-            'gender' => strip_tags($request->input('gender')),
-            'ttl' => date("Y-m-d H:i:s", strtotime(strip_tags($request->input('ttl')))),
-            'phone' => strip_tags($request->input('phone')),
-            'email' => strip_tags($request->input('email')),
-            'alamat' => strip_tags($request->input('alamat')),
-            'statuspelayanan' => strip_tags($request->input('statuspelayanan')),
-            'message' => strip_tags($request->input('message')),
-            'akte' => $akte,
-            'ktp' => $ktp,
-            'ijazah' => $ijazah,
-            'pasfoto' => $pasfoto,
-            'created_time' => date("Y-m-d H:i:s"),
-            'status' => 0,
-            ); 
+            $new_contactus = array(
+                'name' => strip_tags($request->input('firstname')),
+                'gender' => strip_tags($request->input('gender')),
+                'ttl' => date("Y-m-d H:i:s", strtotime(strip_tags($request->input('ttl')))),
+                'phone' => strip_tags($request->input('phone')),
+                'email' => strip_tags($request->input('email')),
+                'alamat' => strip_tags($request->input('alamat')),
+                'statuspelayanan' => strip_tags($request->input('statuspelayanan')),
+                'message' => strip_tags($request->input('message')),
+                'praktek' => strip_tags($request->input('praktek')),
+                'akte' => $akte,
+                'ktp' => $ktp,
+                'ijazah' => $ijazah,
+                'pasfoto' => $pasfoto,
+                'created_time' => date("Y-m-d H:i:s"),
+                'status' => 0,
+                ); 
 
-        $insertid = DB::table('contactus')->insertGetId($new_contactus);
-        if ($insertid) 
-        {   # contactus created
-            $output['info'] = 'success';
-            $output['message'] = "Thank you! You've completed your registration proccess.";
-            $output['code'] = '0';         
+            $insertid = DB::table('contactus')->insertGetId($new_contactus);
+            if ($insertid) 
+            {   # contactus created
+                $output['info'] = 'success';
+                $output['message'] = "Thank you! You've completed your registration proccess.";
+                $output['code'] = '0';         
 
-                              
-        }
-        else
-        {   # user not created
-            $output['message'] = "Unable to process your message. Please try again later.";
-            $output['code'] = '2';
+                                  
+            }
+            else
+            {   # user not created
+                $output['message'] = "Unable to process your message. Please try again later.";
+                $output['code'] = '2';
+            }
+        } else {
+            {   # user not created
+                $output['message'] = "Email sudah terdaftar. Mohon mendaftar dengan menggunakan alamat email lain.";
+                $output['code'] = '2';
+            }
         }
         
 

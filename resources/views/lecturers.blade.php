@@ -33,7 +33,7 @@
                   <h2>Dr. Tonny Andrian, M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/ko ivan.jpg" alt="img">
                   <h2>Pdm. Stevannus Yordan, S.E., M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
@@ -87,7 +87,7 @@
                   <h2>dr. Agustina Karianto.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/default-avatar-min.jpg" alt="img">
+                  <img src="{{ URL::to('/') }}/img/LADTeam/om stef.JPG" alt="img" style="object-position: center;">
                   <h2>Stefanus Maleakhi.</h2>
                 </li>
 

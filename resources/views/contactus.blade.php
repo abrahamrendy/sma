@@ -18,6 +18,60 @@
             width: 100%;
         }
     }
+
+    .switch-field-container {
+      background-color: #FFFFFF;
+      border: 1px solid #D5D5D5;
+      border-radius: 3px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 82%;
+    }
+
+    .switch-field {
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .switch-field input {
+      position: absolute !important;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      width: 1px;
+      border: 0;
+      overflow: hidden;
+    }
+
+    .switch-field label {
+      background-color: #e4e4e4;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      line-height: 1;
+      text-align: center;
+      padding: 8px 16px;
+      margin-right: -1px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+      transition: all 0.1s ease-in-out;
+    }
+
+    .switch-field label:hover {
+      cursor: pointer;
+    }
+
+    .switch-field input:checked + label {
+      background-color: #A37A2D;
+      color: white;
+      box-shadow: none;
+    }
+
+    .switch-field label:first-of-type {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .switch-field label:last-of-type {
+      border-radius: 0 4px 4px 0;
+    }
 </style>
 
   <!-- standard and simple pop-up -->
@@ -45,7 +99,7 @@
     </div>
   </div>
   <!-- end of standard and simple pop-up -->
-
+<?php if (!isset($output)) {?>
   <!-- Start Contactus slider section -->
   <section id="sliderSection" class="homepageslider">            
     <div class="mainslider_area">
@@ -65,6 +119,7 @@
     <div class="container wow fadeIn" data-wow-duration="1s">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="trustedby_area">
+ 
           <div class="team_title">
             <h2>SYARAT DAN KETENTUAN</h2>
             <hr class="title_hr">
@@ -94,6 +149,11 @@
                 <h2>TUITION FEE</h2>
                 <h3>Rp 1.000.000,-</h3>
                 <p class= "additional-info" style="font-weight: 300; font-size: 18pt">(Belum termasuk biaya wisuda Rp 250.000,-)</p>
+                <br>
+                <h2>PENDAFTARAN</h2>
+                <h3>20 JANUARI 2020 - 14 FEBRUARI 2020</h3>
+                <p class= "additional-info" style="font-weight: 300; font-size: 18pt">KELAS DIMULAI TANGGAL 17 FEBRUARI 2020</p>
+                <br>
               </div>
             </div>
           </div>
@@ -101,6 +161,7 @@
       </div>
     </div>
   </section>
+<?php } ?>
   <!-- End Trusted By area -->
 
   <!-- start special quote -->
@@ -115,12 +176,22 @@
                   <hr class="title_hr">
                 <?php } else { ?>
                     <?php if ($output['code'] == '0') {?>
+                      <br>
+                      <br>
+                      <br>
                         <h2>Thank you!</h2>
                         <h3>You've completed your registration proccess.</h3>
-                        <h3>You can complete your payment <a href="{{ route ('confirm_payment')}}" style="font-weight: 500; color: #A37A2D">here</a></h3>
+                        <h3>You can complete your payment <a href="{{ route ('confirm_payment')}}" style="font-weight: 500; color: #A37A2D">here</a> or click the button below.</h3>
+
+                        <a class="slider_btn hvr-icon-up" href="{{ url('/confirmation') }}" style="margin-top: 50px; font-size: 20px;">Payment Confirmation<i class="fa fa-check-circle hvr-icon" style="margin-left: 15px;"></i></a> 
+
                     <?php } else { ?>
                         <?php if ($output['code'] == '2') {?>
-                            <h2>Sorry an error occured!</h2>
+                            <br>
+                            <br>
+                            <br>
+                            <h2>Sorry!</h2>
+                            <h3><?php echo $output['message']; ?></h3>
                             <h3>You can re-register <a href="{{ route ('register')}}" style="font-weight: 500; color: #A37A2D">here</a>!</h3>
                         <?php } ?>
                     <?php } ?>
@@ -146,11 +217,15 @@
                   <input type="text" name="phone" tabindex="3" placeholder="No. HP/WA" class="login_email" id="contactus_phone">
                   <input type="text" name="statuspelayanan" tabindex="6" placeholder="Status Pelayanan" class="login_email">
                   <textarea type="text" name="message" tabindex="7" placeholder="Tujuan Mendaftar" class="login_email" rows = 4 required></textarea>
-                  <div class="checkbox">
-                    <label> Bersedia praktek pelayanan di gereja cabang GBI Sukawarna Bandung (selama 1 hari)</label>
-                    <br>
-                    <input class="form-check-input" type="radio" name="praktek" value="Y">Ya
-                    <input class="form-check-input" type="radio" name="praktek" value="N">Tidak
+
+                  <div class="switch-field-container">
+                    <p style="font-style: normal; font: inherit;">Apakah bersedia praktek pelayanan di gereja cabang GBI Sukawarna Bandung (selama 1 hari)?</p>
+                    <div class="switch-field">
+                      <input type="radio" id="radio-one" name="praktek" value="1" checked/>
+                      <label for="radio-one">Ya</label>
+                      <input type="radio" id="radio-two" name="praktek" value="0" />
+                      <label for="radio-two">Tidak</label>
+                    </div>
                   </div>
 
                   <div class="upload-btn-container">
@@ -180,6 +255,8 @@
                 <div class="submitdiv">
                   <button type="submit" name="contact_button" tabindex="9" class="signinmodalbutton2 hvr-underline-from-center" id = 'contactusbutton'>Submit</button>
                 </div>
+
+                <a class="slider_btn hvr-icon-up" href="{{ url('/confirmation') }}" style="margin-top: 50px; font-size: 20px;">Payment Confirmation<i class="fa fa-check-circle hvr-icon" style="margin-left: 15px;"></i></a> 
               </div>
             </form>
           <?php } ?>
