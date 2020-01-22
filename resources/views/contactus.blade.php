@@ -5,6 +5,14 @@
     .contactusform > .smallerdiv > input[tabindex='1'] {
         width: 32%;
     }
+    .info-box {
+      height: auto;
+      padding: 0%; 
+      margin-top: 0%; 
+    }
+    .info-box h3 {
+      font-weight: 300 !important;
+    }
     @media(max-width: 767px) {
         .contactusform > .smallerdiv > input[tabindex='1'] {
             width: 100%;
@@ -52,6 +60,49 @@
   </section>
   <!-- End Contactus slider section -->
 
+  <!-- Start Trusted By area -->
+  <section id="trustedby">
+    <div class="container wow fadeIn" data-wow-duration="1s">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="trustedby_area">
+          <div class="team_title">
+            <h2>SYARAT DAN KETENTUAN</h2>
+            <hr class="title_hr">
+          </div>
+          <div class="align-center" data-aos = "flip-up">
+            <div class="info-box">
+              <div class="align-center">
+                <h3>1. Lahir baru (lampirkan riwayat pertobatan).</h3>
+                <h3>2. Minimal lulus SLTA atau setara.</h3>
+                <h3>3. Lampirkan riwayat pelayanan (bagi yang sudah melayani).</h3>
+              </div>
+            </div>
+
+          <div class="trustedby_area">
+            <div class="team_title">
+            <h2>KELENGKAPAN ADMINISTRASI</h2>
+            <hr class="title_hr">
+          </div>
+          <div class="align-center" data-aos = "flip-up">
+            <div class="info-box">
+              <div class="align-center">
+                <h3>1. Foto copy Akte Baptisan.</h3>
+                <h3>2. Foto copy KTP.</h3>
+                <h3>3. Foto copy Ijazah terakhir.</h3>
+                <h3>4. Pas foto 3x4 sebanyak 2 lembar.</h3>
+                <br>
+                <h2>TUITION FEE</h2>
+                <h3>Rp 1.000.000,-</h3>
+                <p class= "additional-info" style="font-weight: 300; font-size: 18pt">(Belum termasuk biaya wisuda Rp 250.000,-)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Trusted By area -->
+
   <!-- start special quote -->
   <section id="contactusformsection" style="padding: 0px;">
     <div class="container">
@@ -95,27 +146,33 @@
                   <input type="text" name="phone" tabindex="3" placeholder="No. HP/WA" class="login_email" id="contactus_phone">
                   <input type="text" name="statuspelayanan" tabindex="6" placeholder="Status Pelayanan" class="login_email">
                   <textarea type="text" name="message" tabindex="7" placeholder="Tujuan Mendaftar" class="login_email" rows = 4 required></textarea>
+                  <div class="checkbox">
+                    <label> Bersedia praktek pelayanan di gereja cabang GBI Sukawarna Bandung (selama 1 hari)</label>
+                    <br>
+                    <input class="form-check-input" type="radio" name="praktek" value="Y">Ya
+                    <input class="form-check-input" type="radio" name="praktek" value="N">Tidak
+                  </div>
 
                   <div class="upload-btn-container">
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload Akte Baptis</button>
                             <input type="file" class='up' name="akte" required onchange="readURL(this);" />
-                            <span style="display: block; cursor: pointer;">No file selected</span>
+                            <span style="display: block; cursor: pointer;">No file selected (Max size 8 MB)</span>
                       </div>
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload KTP</button>
                             <input type="file" class='up' name="ktp" required onchange="readURL(this);" />
-                            <span style="display: block; cursor: pointer;">No file selected</span>
+                            <span style="display: block; cursor: pointer;">No file selected (Max size 8 MB)</span>
                       </div>
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload Ijazah</button>
                             <input type="file" class='up' name="ijazah" required onchange="readURL(this);" />
-                            <span style="display: block; cursor: pointer;">No file selected</span>
+                            <span style="display: block; cursor: pointer;">No file selected (Max size 8 MB)</span>
                       </div>
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload Pas Foto</button>
                             <input type="file" class='up' name="pasfoto" required onchange="readURL(this);" />
-                            <span style="display: block;">No file selected</span>
+                            <span style="display: block;">No file selected (Max size 8 MB)</span>
                       </div>
                   </div>
                   
@@ -134,7 +191,7 @@
   <!-- End special quote -->
 
   <!-- start our knowledge partner area -->
-  <section id="testimonial" class="hidden">
+  <section id="testimonial" class="">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -143,7 +200,14 @@
               <h2>CONNECT WITH US</h2>
               <hr class="title_hr">
             </div>
-            <div class="connectwithusdiv" data-aos ="fade-right">
+            <div class="align-center learn-more-container" data-aos="fade-right">
+              <div class="slider_btn hvr-bounce-to-bottom">Pdp. Yogie Tazir : 0857-0237-4347</div>
+            </div>
+
+            <div class="align-center learn-more-container" data-aos="fade-left">
+              <div class="slider_btn hvr-bounce-to-bottom">Pdp. Adi Darta : 0818-0930-6000</div>
+            </div>
+            <div class="connectwithusdiv hidden" data-aos ="fade-right">
               <ul class="single_footer_top_sublist connectwithus">
                 <li><a target="_blank" href="https://www.facebook.com/LAD-252603775224485/"><img src="{{ URL::to('/') }}/img/contactus/facebookblue-min.png" alt="img"></a></li>
                 <li><a target="_blank" href="https://twitter.com/LADGlobal"><img src="{{ URL::to('/') }}/img/contactus/twitterblue-min.png" alt="img"></a></li>
