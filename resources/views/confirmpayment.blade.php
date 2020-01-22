@@ -24,9 +24,9 @@
                   <hr class="title_hr">
                 <?php } else { ?>
                     <?php if ($output['code'] == '0') {?>
-                        <h2>Thank you!</h2>
-                        <h3>You've completed your payment proccess.</h3>
-                        <h3>We will contact you soon!</h3>
+                        <h2>Terima kasih!</h2>
+                        <h3>Anda telah berhasil menyelesaikan proses pembayaran anda.</h3>
+                        <h3>Tim kami akan segera mengontak anda untuk mengirimkan No.Siswa dan PIN login.</h3>
                     <?php } else { ?>
                         <?php if ($output['code'] == '2') {?>
                             <h2>Sorry an error occured!</h2>
