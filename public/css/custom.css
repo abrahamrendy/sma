@@ -1282,7 +1282,8 @@ body:modal-open #sliderSection.homepageslider {
     height: 500px;
   }
   #sliderSection.homepageslider {
-    min-height: 200px;    
+    /*min-height: 200px;    */
+    min-height: 180px;    
   }
   .slideimage {
     max-height: 500px !important;
@@ -1320,13 +1321,15 @@ body:modal-open #sliderSection.homepageslider {
 }
 @media (max-width: 767px) {
   #sliderSection {
-    height: 350px;
+    /*height: 350px;*/
+    height: 180px;
   }
   #sliderSection.homepageslider {
     margin-top: 90px;
   }
   .slideimage {
-    max-height: 350px !important;
+    /*max-height: 350px !important;*/
+    max-height: 180px !important;
   }
   .slider_caption h1.lad_homeslider, .slider_caption h1.lad_aboutusslider, .slider_caption h1.browsecoursessliders, .slider_caption h1.lad_achievements {
     font-size: 40px;
@@ -4091,10 +4094,10 @@ body:modal-open #sliderSection.homepageslider {
   margin: 0px;
 }
 .price_nav.aboutusleadershipteam img {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 180px;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   margin-bottom: 10px;
   /*box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3);*/
 }
