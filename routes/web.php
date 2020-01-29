@@ -146,3 +146,56 @@ Route::get('/download/{filename}', function($filename)
 // Route::get('/employeelist', 'EmployeeController@index');
 // Route::get('/customizedcourse', 'CourseController@customized');
 //OBSOLETE
+
+Auth::routes();
+
+Route::get('/admin', 'BackOfficeController@index')->name('bo');
+Route::post('/admin_login', 'BackOfficeController@index')->name('bo_login');
+Route::get('/admin/details/{id}/{page?}', 'BackOfficeController@details')->name('registrant_details');
+Route::get('/admin/edit/{id}/{page?}', 'BackOfficeController@edit')->name('registrant_edit');
+Route::post('/admin/submit_edit}', 'BackOfficeController@submit_edit')->name('submit_edit');
+Route::post('/admin/approve}', 'BackOfficeController@approve_user')->name('approve');
+Route::post('/admin/reject}', 'BackOfficeController@reject_user')->name('reject');
+
+Route::get('/admin/bukti_bayar', 'BackOfficeController@bukti_bayar')->name('bukti_bayar');
+
+
+Route::get('download/akte/{file_name}', function($file_name = null)
+{
+    $path = storage_path().'/'.'app'.'/akte/'.$file_name;
+    if (file_exists($path)) {
+        return Response::download($path);
+    }
+})->name('dl_files_akte');
+
+Route::get('download/ijazah/{file_name}', function($file_name = null)
+{
+    $path = storage_path().'/'.'app'.'/ijazah/'.$file_name;
+    if (file_exists($path)) {
+        return Response::download($path);
+    }
+})->name('dl_files_ijazah');
+
+Route::get('download/ktp/{file_name}', function($file_name = null)
+{
+    $path = storage_path().'/'.'app'.'/ktp/'.$file_name;
+    if (file_exists($path)) {
+        return Response::download($path);
+    }
+})->name('dl_files_ktp');
+
+Route::get('download/pasfoto/{file_name}', function($file_name = null)
+{
+    $path = storage_path().'/'.'app'.'/pasfoto/'.$file_name;
+    if (file_exists($path)) {
+        return Response::download($path);
+    }
+})->name('dl_files_pasfoto');
+
+Route::get('download/bukti/{file_name}', function($file_name = null)
+{
+    $path = storage_path().'/'.'app'.'/bukti/'.$file_name;
+    if (file_exists($path)) {
+        return Response::download($path);
+    }
+})->name('dl_files_bukti');

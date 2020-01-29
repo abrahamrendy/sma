@@ -145,10 +145,25 @@
                 <h3>2. Foto copy KTP.</h3>
                 <h3>3. Foto copy Ijazah terakhir.</h3>
                 <h3>4. Pas foto 3x4 sebanyak 2 lembar.</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="trustedby_area">
+            <div class="team_title">
+            <h2>CARA PEMBAYARAN</h2>
+            <hr class="title_hr">
+          </div>
+          <div class="align-center" data-aos = "flip-up">
+            <div class="info-box">
+              <div class="align-center">
+                <h2>PEMBAYARAN PENUH</h2>
+                <h3>(Tuition fee Rp 1.000.000,- + Wisuda Rp. 250.000,-)</h3>
                 <br>
-                <h2>TUITION FEE</h2>
-                <h3>Rp 1.000.000,-</h3>
-                <p class= "additional-info" style="font-weight: 300; font-size: 18pt">(Belum termasuk biaya wisuda Rp 250.000,-)</p>
+                <h2>PEMBAYARAN BERTAHAP</h2>
+                <h3>1. Rp. 200.000,- pada saat pendaftaran (registrasi).</h3>
+                <h3>2. Rp. 200.000,- per bulan sebanyak 4 kali sebelum tanggal 5 setiap bulan berjalan.</h3>
+                <h3>3. Rp. 250.000,- pada bulan terakhir sebelum wisuda.</h3>
                 <br>
                 <h2>PENDAFTARAN</h2>
                 <h3>20 JANUARI 2020 - 14 FEBRUARI 2020</h3>
@@ -231,22 +246,22 @@
                   <div class="upload-btn-container">
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload Akte Baptis</button>
-                            <input type="file" class='up' name="akte" required onchange="readURL(this);" />
+                            <input type="file" class='up' name="akte" onchange="readURL(this);" />
                             <span style="display: block; cursor: pointer;">No file selected (Max size 8 MB)</span>
                       </div>
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload KTP</button>
-                            <input type="file" class='up' name="ktp" required onchange="readURL(this);" />
+                            <input type="file" class='up' name="ktp" onchange="readURL(this);" />
                             <span style="display: block; cursor: pointer;">No file selected (Max size 8 MB)</span>
                       </div>
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload Ijazah</button>
-                            <input type="file" class='up' name="ijazah" required onchange="readURL(this);" />
+                            <input type="file" class='up' name="ijazah" onchange="readURL(this);" />
                             <span style="display: block; cursor: pointer;">No file selected (Max size 8 MB)</span>
                       </div>
                       <div class="upload-btn-wrapper">
                             <button class="btn">Upload Pas Foto</button>
-                            <input type="file" class='up' name="pasfoto" required onchange="readURL(this);" />
+                            <input type="file" class='up' name="pasfoto" onchange="readURL(this);" />
                             <span style="display: block;">No file selected (Max size 8 MB)</span>
                       </div>
                   </div>
@@ -278,11 +293,7 @@
               <hr class="title_hr">
             </div>
             <div class="align-center learn-more-container" data-aos="fade-right">
-              <div class="slider_btn hvr-bounce-to-bottom">Pdp. Yogie Tazir : 0857-0237-4347</div>
-            </div>
-
-            <div class="align-center learn-more-container" data-aos="fade-left">
-              <div class="slider_btn hvr-bounce-to-bottom">Pdp. Adi Darta : 0818-0930-6000</div>
+              <div class="slider_btn hvr-bounce-to-bottom">Phone / WA : 0896-3000-0256</div>
             </div>
             <div class="connectwithusdiv hidden" data-aos ="fade-right">
               <ul class="single_footer_top_sublist connectwithus">

@@ -119,7 +119,7 @@
                 <span class="month">12</span>
               </span>
               <h2>Homelitika</h2>
-              <p>Ilmu berkhotbah secara terstruktur.</p>
+              <p>Ilmu khotbah secara terstruktur, dinamis, dan inspiratif.</p>
             </div>
           </article>
           <article data-aos="fade-left">

@@ -187,7 +187,7 @@ class HomeController extends Controller
             );
         
         if ($request->hasFile('bukti')){
-            $photoname = $request->input('firstname').'_PASFOTO';
+            $photoname = $request->input('firstname').'_BUKTI';
             $addPhoto = $photoname.'.'.$request->file('bukti')->getClientOriginalExtension();
             $bukti = Storage::putFileAs('bukti', $request->file('bukti'), $addPhoto);
         }
@@ -405,6 +405,11 @@ class HomeController extends Controller
             'message' => 'Unable to contact us. Please try again later.',
             'code' => 'x' 
             );
+
+        $akte = '';
+        $ktp = '';
+        $ijazah = '';
+        $pasfoto = '';
 
         if ($request->hasFile('akte')){
             $photoname = $request->input('firstname').'_AKTE';
