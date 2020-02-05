@@ -153,6 +153,7 @@
           <li <?=(isset($homeflag) && ($homeflag==true))?'class="active"':'';?>><a href="{{ url('/') }}">Home</a></li>
           <li <?=(isset($lecturerflag) && ($lecturerflag==true))?'class="active"':'';?>><a href="{{ url('/lecturers') }}">Lecturers</a></li>
           <li <?=(isset($curriculumflag) && ($curriculumflag==true))?'class="active"':'';?>><a href="{{ url('/curriculum') }}">Curriculum</a></li>
+          <li <?=(isset($faq) && ($faq==true))?'class="active"':'';?>><a href="{{ url('/faq') }}">FAQ</a></li>
           <li <?=(isset($registerflag) && ($registerflag==true))?'class="active"':'';?>><a href="{{ url('/register') }}">Register</a></li>
           <li><a class="home_signup_button hvr-icon-wobble-horizontal hidden" id="signinbutton" href="#" style="font-family: 'Montserrat'; font-weight: 500 !important; font-size: 1.5rem;">LOGIN <i class="fa fa-sign-in hvr-icon" style="margin-left: 5px;"></i></a></li>
         </ul>

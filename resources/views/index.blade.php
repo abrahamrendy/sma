@@ -144,6 +144,10 @@
             </div>
           </div>
 
+          <div class="align-center learn-more-container" data-aos="fade-left">
+            <a class="slider_btn hvr-bounce-to-bottom" href="{{ url('/helpfaq') }}">Learn More About<br>Katartizo Mission Academy</a>
+          </div>
+
           <div class="align-center learn-more-container" data-aos="fade-right">
             <a class="slider_btn hvr-bounce-to-bottom" href="{{ url('/lecturers') }}">Learn More About Our Lecturers</a>
           </div>

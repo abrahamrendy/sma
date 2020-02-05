@@ -28,7 +28,7 @@ Route::post('/confirmation_submit', 'HomeController@submit_confirm_payment')->na
 Route::post('/contactus_submit', 'HomeController@contactus_submit');
 Route::get('/aboutus', 'HomeController@aboutus');
 Route::get('/lecturers', 'HomeController@aboutus');
-Route::get('/helpfaq', 'HomeController@helpfaq');
+Route::get('/faq', 'HomeController@helpfaq');
 Route::get('/accountinfo', 'HomeController@accountinfo');
 Route::get('/accountinfo', 'HomeController@accountinfo');
 Route::get('/curriculum', 'HomeController@curriculum');
