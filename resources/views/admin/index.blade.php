@@ -64,6 +64,10 @@
     .btn-primary {
       margin-top: 5px;
     }
+
+    .content {
+      overflow: auto;
+    }
   </style>
 
 </head>
@@ -111,7 +115,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li><a href="{{route('bo')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li><a href="{{route('bukti_bayar')}}"><i class="fa fa-money"></i> <span>Bukti Bayar</span></a></li>
-      <li><a href="{{route('bo')}}"><i class="fa fa-book"></i> <span>Upload Materi</span></a></li>
+      <li><a href="{{route('materi')}}"><i class="fa fa-book"></i> <span>Upload Materi</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->

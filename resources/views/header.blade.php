@@ -155,7 +155,17 @@
           <li <?=(isset($curriculumflag) && ($curriculumflag==true))?'class="active"':'';?>><a href="{{ url('/curriculum') }}">Curriculum</a></li>
           <li <?=(isset($faq) && ($faq==true))?'class="active"':'';?>><a href="{{ url('/faq') }}">FAQ</a></li>
           <li <?=(isset($registerflag) && ($registerflag==true))?'class="active"':'';?>><a href="{{ url('/register') }}">Register</a></li>
-          <li><a class="home_signup_button hvr-icon-wobble-horizontal hidden" id="signinbutton" href="#" style="font-family: 'Montserrat'; font-weight: 500 !important; font-size: 1.5rem;">LOGIN <i class="fa fa-sign-in hvr-icon" style="margin-left: 5px;"></i></a></li>
+          <li>
+            <?php if (Session::get('LAD_expire') && (time() < Session::get('LAD_expire'))): ?>
+              <a class=" hvr-icon-wobble-horizontal" href="{{ URL::to('/') }}/logout_user" style="">Logout <i class="fa fa-sign-out hvr-icon" style="margin-left: 5px;"></i></a>
+              
+            </li>
+            <li>
+              <a class="home_signup_button hvr-icon-wobble-horizontal" href="{{ URL::to('/') }}/dashboard" style="font-family: 'Montserrat'; font-weight: 500 !important; font-size: 1.5rem;">Hi, <?=Session::get('LAD_user_name','');?> <i class="fa fa-user hvr-icon" style="margin-left: 5px;"></i></a>
+            <?php else: ?>
+              <a class="home_signup_button hvr-icon-wobble-horizontal" id="signinbutton" href="#" style="font-family: 'Montserrat'; font-weight: 500 !important; font-size: 1.5rem;">LOGIN <i class="fa fa-sign-in hvr-icon" style="margin-left: 5px;"></i></a>
+            <?php endif ?>
+          </li>
         </ul>
       </div>
     </div>

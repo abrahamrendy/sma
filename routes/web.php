@@ -98,9 +98,9 @@ Route::get('/getcurrentprogress/{cid}','CourseController@getCurrentProgress');
 Route::post('/requestcustomizedcourse', 'CourseController@request_customized_courses');
 Route::post('/updatecustomizedcourse', 'CourseController@update_customized_courses');
 
-Route::post('/login', 'AuthController@login');
+Route::post('/login_user', 'AuthController@login');
 Route::post('/register', 'AuthController@register_individual');
-Route::get('/logout', 'AuthController@logout');
+Route::get('/logout_user', 'AuthController@logout');
 Route::post('/resetpassword', 'AuthController@reset_password');
 Route::get('/reset_password_form', 'AuthController@reset_password_form');
 Route::post('/reset_password_confirm', 'AuthController@reset_password_confirm');
@@ -159,6 +159,8 @@ Route::post('/admin/reject}', 'BackOfficeController@reject_user')->name('reject'
 
 Route::get('/admin/bukti_bayar', 'BackOfficeController@bukti_bayar')->name('bukti_bayar');
 
+Route::get('/admin/materi', 'BackOfficeController@materi')->name('materi');
+
 
 Route::get('download/akte/{file_name}', function($file_name = null)
 {
@@ -199,3 +201,11 @@ Route::get('download/bukti/{file_name}', function($file_name = null)
         return Response::download($path);
     }
 })->name('dl_files_bukti');
+
+Route::get('download/modul/{file_name}', function($file_name = null)
+{
+    $path = storage_path().'/'.'app'.'/modul/'.$file_name;
+    if (file_exists($path)) {
+        return Response::download($path);
+    }
+})->name('dl_files_modul');

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class BackOfficeController extends Controller
 {
@@ -71,7 +74,7 @@ class BackOfficeController extends Controller
 
 
         if ($request->hasFile('akte')){
-            $photoname = $request->input('firstname').'_AKTE';
+            $photoname = $request->input('name').'_AKTE';
             $addPhoto = $photoname.'.'.$request->file('akte')->getClientOriginalExtension();
             $akte = Storage::putFileAs('akte', $request->file('akte'), $addPhoto);
         } else {
@@ -79,7 +82,7 @@ class BackOfficeController extends Controller
         }
 
         if ($request->hasFile('ktp')){
-            $photoname = $request->input('firstname').'_KTP';
+            $photoname = $request->input('name').'_KTP';
             $addPhoto = $photoname.'.'.$request->file('ktp')->getClientOriginalExtension();
             $ktp = Storage::putFileAs('ktp', $request->file('ktp'), $addPhoto);
         } else {
@@ -87,7 +90,7 @@ class BackOfficeController extends Controller
         }
 
         if ($request->hasFile('ijazah')){
-            $photoname = $request->input('firstname').'_IJAZAH';
+            $photoname = $request->input('name').'_IJAZAH';
             $addPhoto = $photoname.'.'.$request->file('ijazah')->getClientOriginalExtension();
             $ijazah = Storage::putFileAs('ijazah', $request->file('ijazah'), $addPhoto);
         } else {
@@ -95,7 +98,7 @@ class BackOfficeController extends Controller
         }
 
         if ($request->hasFile('pasfoto')){
-            $photoname = $request->input('firstname').'_PASFOTO';
+            $photoname = $request->input('name').'_PASFOTO';
             $addPhoto = $photoname.'.'.$request->file('pasfoto')->getClientOriginalExtension();
             $pasfoto = Storage::putFileAs('pasfoto', $request->file('pasfoto'), $addPhoto);
         } else {
@@ -151,5 +154,10 @@ class BackOfficeController extends Controller
     {
         $registrant = DB::table('paymentconfirmation')->orderBy('id', 'desc')->get();
         return view('admin.buktibayar', compact('registrant'));
+    }
+
+    public function materi(){
+        $materi = DB::table('modul')->orderBy('id', 'desc')->get();
+        return view('admin.materi', compact('materi'));
     }
 }

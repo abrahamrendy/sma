@@ -5,7 +5,7 @@
   <?php } ?>
   <div class="page-content" style="margin-top: 100px; padding-top: 81px; background-color: #FBFBFB; padding-bottom: 30px">
     <div class="row container centered">
-      <div class="col-md-2" style="z-index: 10">
+      <div class="col-md-2 hide" style="z-index: 10">
         <div class="sidebar content-box" style="display: block;">
             <div class="profile-photo bottom">
               <img src="<?php echo env('S3_URL')?><?=(Session::get('LAD_user_photo') != null)?Session::get('LAD_user_photo'):'images/default-avatar-min.jpg';?>" style="width: 100px; height: 100px; object-fit: cover; object-position: center; border-radius: 100%">  
@@ -17,6 +17,7 @@
               <br><br>
             </div>
             <div class="rank">
+              <?php if (isset($users)) { ?>
               <?php if ($users->type != 3) {?>
                 <div class="box-content right-border">
                   <img src="{{ URL::to('/') }}/img/star-min.png">
@@ -29,6 +30,7 @@
                       echo 'Corporate';
                     }
                   ?>
+                <?php } ?>
                 </div>
                 <div class="box-content">
                   <img src="{{ URL::to('/') }}/img/rank-min.png">

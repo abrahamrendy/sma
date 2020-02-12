@@ -463,8 +463,8 @@ img{
 .price_nav>li{
   width: 23%;
   min-height: 200px;
-  max-height: 350px;
-  height: 300px;
+  max-height: 450px;
+  /*height: 300px;*/
   float: left;
   display: block;
   border: 1px solid #ccc;
@@ -1997,10 +1997,17 @@ transition: all 0.5s;
   padding-left: 85px;
   padding-top: 20px;
 }
+@media(max-width:767px ){
+  .dashboard-content {
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+}
+
 
 .dashboard-header a{
   font-size: 22pt;
-  color: #5786B4;
+  color: #A27B2E;
 }
 
 .dashboard-header img {
@@ -2138,6 +2145,12 @@ transition: all 0.5s;
   background-color: white;
   /*border: 1px solid #E3E3E3;*/
 }
+@media(max-width:767px ){
+  #dashboard-popular #priceSection .pricearea .price_nav li, #dashboard-wishlist #priceSection .pricearea .price_nav li {
+    width: 100% !important;
+  }
+}
+
 
 .hide {
   display: none !important;

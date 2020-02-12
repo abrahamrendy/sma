@@ -30,7 +30,7 @@
                 <!-- Static Contents -->
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/Toni A.JPG" alt="img">
-                  <h2>Dr. Tonny Andrian, M.Th.</h2>
+                  <h2>Pdt. Dr. Tonny Andrian, M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/ko ivan.jpg" alt="img">
@@ -38,7 +38,7 @@
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/Junus M.jpeg" alt="img">
-                  <h2>Pdm. Junus Mulyana, MPM., M.Th.</h2>
+                  <h2>Pdm. Junus Mulyana, M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/Budi M.JPG" alt="img">

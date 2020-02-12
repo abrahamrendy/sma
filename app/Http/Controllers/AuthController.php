@@ -1078,174 +1078,74 @@ class AuthController extends Controller
             'code' => 'x' 
             );
 
-        $method = strip_tags($request->input('method'));
-        if ($method == 1) 
-        {   # Normal Login 
-            $rules = array(
-                'login_email' => 'required|email|max:100',
-                'login_password' => 'required|min:5|max:20',
-                'login_rememberme' => 'nullable|alpha_dash|max:5'
-                );
-            $messages = array(
-                'login_email.required' => 'The email is required.',
-                'login_email.email' => 'The email must be in a valid email format.',
-                'login_email.max' => 'The email must be less than :max characters long.',
 
-                'login_password.required' => 'The password is required.',
-                'login_password.min' => 'The password must be more than :min characters long.',
-                'login_password.max' => 'The password must be less than :max characters long.'
-                );
+        # Normal Login 
+        $rules = array(
+            'login_email' => 'required|email|max:100',
+            'login_password' => 'required|min:4|max:20',
+            'login_rememberme' => 'nullable|alpha_dash|max:5'
+            );
+        $messages = array(
+            'login_email.required' => 'The email is required.',
+            'login_email.email' => 'The email must be in a valid email format.',
+            'login_email.max' => 'The email must be less than :max characters long.',
 
-            $validator = Validator::make($request->only('login_email','login_password','login_rememberme'), $rules, $messages);
-            if ($validator->fails()) 
-            {   # Validation failed 
-                $errors = $validator->errors();
+            'login_password.required' => 'The password is required.',
+            'login_password.min' => 'The password must be more than :min characters long.',
+            'login_password.max' => 'The password must be less than :max characters long.'
+            );
 
-                // Display all errors in arrays
-                // $message = $validator->messages();
+        $validator = Validator::make($request->only('login_email','login_password','login_rememberme'), $rules, $messages);
+        if ($validator->fails()) 
+        {   # Validation failed 
+            $errors = $validator->errors();
 
-                // Display all errors in text
-                // $message = "";
-                // foreach ($errors->all() as $error_message) 
-                // {   # iterate error messages
-                //     $message .= $error_message." ";
-                // }
-                $message = $errors->first();
+            // Display all errors in arrays
+            // $message = $validator->messages();
 
-                $output['message'] = $message;
-                $output['code'] = '1';
+            // Display all errors in text
+            // $message = "";
+            // foreach ($errors->all() as $error_message) 
+            // {   # iterate error messages
+            //     $message .= $error_message." ";
+            // }
+            $message = $errors->first();
+
+            $output['message'] = $message;
+            $output['code'] = '1';
+        }
+        else
+        {   # Validation passed
+            $login_email = strip_tags($request->input('login_email'));
+            $login_password = strip_tags($request->input('login_password'));
+            $login_rememberme = strip_tags($request->input('login_rememberme'));
+
+            # Registered via email-password
+            $is_login = $this->do_login($login_email, $login_password);
+            if ($is_login['result']) 
+            {   # login success
+                // Create session
+                $this->create_session($is_login['id'], $is_login['name']);
+                
+                $output['info'] = 'success';
+                $output['message'] = "Login OK.";
+                $output['code'] = '0';
             }
             else
-            {   # Validation passed
-                $login_email = strip_tags($request->input('login_email'));
-                $login_password = strip_tags($request->input('login_password'));
-                $login_rememberme = strip_tags($request->input('login_rememberme'));
-
-                $account_type = $this->get_account_type($login_email);
-                if ($account_type) 
-                {   # Account type found
-                    if ($account_type == $this->account_type_google) 
-                    {   # Registered via Google
-                        $output['message'] = "This email address is already registered with a Google account. Please use the 'Sign in with Google option'.";
-                    }
-                    else if($account_type == $this->account_type_facebook)
-                    {   # Registered via Facebook
-                        $output['message'] = "This email address is already registered with a Facebook account. Please use the 'Sign in with Facebook option'.";
-                    }
-                    else if($account_type == $this->account_type_normal || $account_type == $this->account_type_normal_corporate)
-                    {   # Registered via email-password
-                        $is_login = $this->do_login($login_email, $login_password);
-                        if ($is_login['result']) 
-                        {   # login success
-                            // Create session
-                            $this->create_session($is_login['id'], $is_login['name'], $is_login['photo'], $login_rememberme, $is_login['course_credits'], $is_login['proposal_credits']);
-                            
-                            $output['info'] = 'success';
-                            $output['message'] = "Login OK.";
-                            $output['user_type'] = Session::get('LAD_user_type');
-                            $output['code'] = '0';
-                        }
-                        else
-                        {   # login failed
-                            // $output['code'] = hash($this->password_hash_algo, $login_password);
-                            if (isset($is_login['suspended'])) 
-                            {   # account is suspended
-                                $output['code'] = '21';   
-                                $output['message'] = "Your account is currently suspended. Please contact administrator to activate it.";
-                            }
-                            else
-                            {   # Account not found
-                                $output['code'] = '2';   
-                            }
-                        }
-                    }
+            {   # login failed
+                // $output['code'] = hash($this->password_hash_algo, $login_password);
+                if (isset($is_login['suspended'])) 
+                {   # account is suspended
+                    $output['code'] = '21';   
+                    $output['message'] = "Your account is currently suspended. Please contact administrator to activate it.";
+                }
+                else
+                {   # Account not found
+                    $output['code'] = '2';   
                 }
             }
         }
-        else if ($method == 2) 
-        {   # Login via Google 
-            $rules = array(
-                'email' => 'required|email|max:100',
-                'id_token' => 'required'
-                );
-            $messages = array(
-                'email.required' => 'The Account Email is required.',
-                'email.email' => 'The Account Email must be in a valid email format.',
-                'email.max' => 'The Account Email must be less than :max characters long.',
-
-                'id_token.required' => 'The ID Token is required.'
-                );
-            $validator = Validator::make($request->only('email','id_token'), $rules, $messages);
-            if ($validator->fails()) 
-            {   # Validation failed 
-                $errors = $validator->errors();
-
-                // Display all errors in arrays
-                // $message = $validator->messages();
-
-                // Display all errors in text
-                // $message = "";
-                // foreach ($errors->all() as $error_message) 
-                // {   # iterate error messages
-                //     $message .= $error_message." ";
-                // }
-                $message = $errors->first();
-
-                $output['message'] = $message;
-                $output['code'] = '1';
-            }
-            else
-            {   # Validation passed
-                $email = strip_tags($request->input('email'));
-                $id_token = strip_tags($request->input('id_token'));
-
-                $account_type = $this->get_account_type($email);
-                if ($account_type) 
-                {   # Account type found
-                    if ($account_type == $this->account_type_google) 
-                    {   # Registered via Google
-                        $is_login = $this->do_login_google($email, $id_token);
-                        if ($is_login['result']) 
-                        {   # login success
-                            // // Create session
-                            $this->create_session($is_login['id'], $is_login['name'], $is_login['photo'], false, $is_login['course_credits']);
-
-                            $output['info'] = 'success';
-                            $output['message'] = "Login OK.";
-                            $output['code'] = '0';
-                        }
-                        else
-                        {   # login failed
-                            if (isset($is_login['suspended'])) 
-                            {   # account is suspended
-                                $output['code'] = '21';   
-                                $output['message'] = "Your account is currently suspended. Please contact administrator to activate it.";
-                            }
-                            else
-                            {   # Account not found
-                                $output['code'] = '2';
-                                if (isset($is_login['message'])) 
-                                {   # Custom error message
-                                    $output['message'] = $is_login['message']." (".$is_login['code'].")";
-                                }
-                            }  
-                        }
-                    }
-                    else if($account_type == $this->account_type_facebook)
-                    {   # Registered via Facebook
-                        $output['message'] = "This email address is already registered with a Facebook account. Please use the 'Sign in with Facebook option'.";
-                    }
-                    else if($account_type == $this->account_type_normal_corporate)
-                    {   # Registered via email-password (Corporate)
-                        $output['message'] = "This email address is already registered with a Corporate LADGlobal account. Please sign in with your email and password.";
-                    }
-                    else if($account_type == $this->account_type_normal)
-                    {   # Registered via email-password
-                        $output['message'] = "This email address is already registered with an Individual LADGlobal account. Please sign in with your email and password.";
-                    }
-                }
-            }
-        }
+        
 
         return json_encode($output);
     }
@@ -1321,29 +1221,20 @@ class AuthController extends Controller
 
         if (($email != false) && ($password != false)) 
         {   # email and password are both filled
-            $selectedUser = collect(DB::select("SELECT users.id,
-                                                       users.email,
-                                                       users.name,
-                                                       users.photo,
-                                                       users.password,
-                                                       users.status,
-                                                       users.course_credits,
-                                                       users.proposal_credits
-                                                    FROM users 
+            $selectedUser = collect(DB::select("SELECT *
+                                                    FROM contactus 
                                                     where email = ? limit 1", [$email]))->first();
             if ($selectedUser)
             {   # User found
                 if ($selectedUser->status == 1) 
                 {   # account is active
-                    $hashed_password = hash($this->password_hash_algo, $password);
-                    if ($selectedUser->password === $hashed_password) 
+                    $dob = date("dm", strtotime($selectedUser->ttl));
+                    if ($dob === $password) 
                     {   # password match
+                        $name = explode(" ", $selectedUser->name);
                         $output['result'] = true;
                         $output['id'] = $selectedUser->id;
-                        $output['name'] = $selectedUser->name;
-                        $output['photo'] = $selectedUser->photo;
-                        $output['course_credits'] = $selectedUser->course_credits;
-                        $output['proposal_credits'] = $selectedUser->proposal_credits;
+                        $output['name'] = $name[0];
                     }
                 }
                 else
@@ -1499,8 +1390,6 @@ class AuthController extends Controller
         Session::put('LAD_course_credits', $course_credits);
         Session::put('LAD_proposal_credits', $proposal_credits);
 
-        $user_type = DB::table('users')->where('id',$user_id)->first();
-        Session::put('LAD_user_type', $user_type->type);
         if ($rememberme == "true") 
         {   # Remember me is on
             Session::put('LAD_expire', strtotime('+12 hours', time()));

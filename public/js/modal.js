@@ -718,11 +718,6 @@ function show_signin_modal()
     $('body').css('overflow','hidden');
     signinmodal.style.display = "block";
 
-    // Switch caret display
-    var signincaret = document.getElementById("signincaret");
-    signincaret.style.display = "block";
-    var signupcaret = document.getElementById("signupcaret");
-    signupcaret.style.display = "none";
 
     // Show Google and Facebook Sign-in, and 'or'
     document.getElementById("googlefbdiv").style.display = "table"; // googlefbdiv
@@ -2606,16 +2601,19 @@ $(document).ready(function(){
 
         if (method.toLowerCase() == "sign in") 
         {   // Sign In 
+            console.log('asdf');
             $("#sign_button").prop('disabled', true);
 
             var login_email = $('#login_email').val();
             var login_password = $('#login_password').val();
+            console.log(login_email);
+            console.log(login_password);
             var login_rememberme = $('#login_rememberme').prop("checked");
             var _token = $('meta[name="csrf-token"]').attr('content');
 
             var login = $.ajax(
                         {
-                            url: base_url + '/login',
+                            url: base_url + '/login_user',
                             type:'POST', //data type
                             dataType : "json",
                             data: {method:1, login_email:login_email, login_password:login_password, login_rememberme:login_rememberme, _token:_token},
@@ -2624,74 +2622,8 @@ $(document).ready(function(){
                             {
                                 if (data.info == "success") 
                                 {   // Login successful
-                                    // window.location.replace(base_url+"/dashboard");
-
-                                    // CHECK IF SIGN IN FROM TELL US MODAL
-                                    if ($('#fromtellus').text() == '1' && (data.user_type != null && data.user_type == '1')) {
-                                        // SUBMIT CUSTOMIZED COURSE
-                                        $("#nextbutton").prop('disabled', true);
-
-                                        var formData = new FormData($('#request-course-form')[0]);
-
-                                        // Append token
-                                        var _token = $('meta[name="csrf-token"]').attr('content');
-                                        formData.append('_token', _token);
-
-                                        var request = $.ajax(
-                                                    {
-                                                        url: base_url + '/requestcustomizedcourse',
-                                                        type:'POST', //data type
-                                                        dataType : "json",
-                                                        headers: {
-                                                            'X-CSRF-TOKEN': _token
-                                                        },
-                                                        data: formData,
-                                                        // cache: false,
-                                                        processData: false,
-                                                        contentType: false,
-                                                        success:function(data)
-                                                        {
-                                                            if (data.info == "success") 
-                                                            {   // Request successful 
-                                                                var url = window.location.href;
-                                                                var postcourseflag = 0;
-                                                                var temp = url.search("/customizedcourse");
-                                                                if (temp != -1) {
-                                                                  postcourseflag = 1;
-                                                                }
-                                                                if (postcourseflag == 1) {
-                                                                    $('#page-loading-ajax').removeClass('hide');
-                                                                    location.reload();
-                                                                } else {
-                                                                    checkScrollBars(false);
-                                                                    signinmodal.style.display = "none";
-                                                                    show_tellus_modal();
-                                                                    refresh_custom_course_page("finish");
-                                                                    // Reset form
-                                                                    $('#request-course-form').trigger('reset');
-                                                                    $('#requestcustomized_pdf_names').css('display','none');
-                                                                    $("#requestcustomized_pdf_names").html('');
-                                                                    $('.delete-pdf').css('display','none');
-                                                                }
-                                                            }
-                                                            else
-                                                            {   // Request error
-                                                                location.reload();
-                                                            }
-                                                            // Re-enable button
-                                                            $("#nextbutton").prop('disabled', false);
-                                                        },
-                                                        error:function(data)
-                                                        {
-                                                            alert("Failed to request customized course. Please try again later.");
-
-                                                            // Re-enable button
-                                                            $("#nextbutton").prop('disabled', false);
-                                                        }
-                                                    });
-                                    } else {
-                                        location.reload();
-                                    }
+                                    window.location.replace(base_url+"/dashboard");
+                                    // location.reload();
 
                                 }
                                 else

@@ -41,27 +41,9 @@ class DashboardController extends Controller
             $users = UsersModel::where('id',$userid)
                                     ->first();
 
-            if ($users->type != 3) {
+            $courses = DB::table('modul')->orderBy('id', 'desc')->get();
 
-                $courses['popular'] = $this->getCourses(0,9,0,2);
-                $courses['wishlist'] = $this->getWishlist(0,Session::get("LAD_user_id"));
-                $courses['featured'] = $this->getFeaturedCourses();
-
-                return view('header', ['header_loggedin' => $header_loggedin])->withTitle('LAD Global | Dashboard').view('dashboard/dashboard-sidebar',['users' => $users]).view('dashboard/dashboard-index', ['courses' => $courses]).view('footer');
-            } else {
-
-                // $all_users = DB::select("SELECT users.*, user_roles.name as role_name FROM `users` INNER JOIN user_roles on user_roles.id = users.role WHERE users.id != '$userid'");
-
-                $all_users = DB:: select("  SELECT t.*, user_occupations.name as comp_occupation
-                                            FROM
-                                            (SELECT users.*, user_roles.name as role_name, user_occupations.name as occupation_name FROM `users` 
-                                            INNER JOIN user_roles on user_roles.id = users.role 
-                                            LEFT JOIN user_occupations on users.occupation = user_occupations.id 
-                                            WHERE users.id != '$userid') as t
-                                            LEFT JOIN user_occupations on user_occupations.id = t.corporate_admin_occupation ORDER BY t.id DESC");
-
-                return view('header', ['header_loggedin' => $header_loggedin])->withTitle('LAD Global | Dashboard').view('dashboard/dashboard-sidebar',['users' => $users]).view('dashboard/usermanager', ['all_users' => $all_users]).view('footer');
-            }
+            return view('header', ['header_loggedin' => $header_loggedin])->withTitle('Dashboard - KATARTIZO Mission Academy').view('dashboard/dashboard-sidebar',['users' => $users]).view('dashboard/dashboard-index', ['courses' => $courses]).view('footer');
         }
         
 

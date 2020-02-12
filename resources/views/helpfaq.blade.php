@@ -116,9 +116,11 @@
               </div>
               <div id="collapse5" class="panel-collapse collapse">
                 <div class="panel-body">
-                  1.  Pelajaran teoritis maupun praktis bagaimana mempersiapkan perintisan gereja dan menjalankan setiap aspek pelayanannya dengan baik.<br>
-                  2.  Tugas praktek guna memperlengkapi sisi praktikal materi ajar.<br>
-                  3.  Impartasi roh dan pengalaman dari para praktisi sesuai materi yang ada.
+                  <ol>
+                    <li>Pelajaran teoritis maupun praktis bagaimana mempersiapkan perintisan gereja dan menjalankan setiap aspek pelayanan gerejawi dengan baik.</li>
+                    <li>Tugas praktek guna memperlengkapi sisi praktikal materi ajar.</li>
+                    <li>Impartasi roh dan pengalaman dari para praktisi sesuai materi yang ada.</li>
+                  </ol>
                 </div>
               </div>
             </div>
