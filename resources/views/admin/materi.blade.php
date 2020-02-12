@@ -13,13 +13,17 @@
       @endif
     @endif
     <div style="padding-top: 15px;">
+      <div>
+        <a href="{{route('add_materi')}}"><button type="button" class="btn btn-primary" style="margin-bottom: 25px">ADD NEW</button></a>
+      </div>
      <table id="example" class="table table-striped table-bordered list_data" cellspacing="0" width="100%">
         <thead>
           <tr>
             <th>No</th>
             <th>Nama</th>
-            <th>Order</th>
+            <!-- <th>Order</th> -->
             <th>Download</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -30,7 +34,7 @@
               <tr>
                 <td align="center">{{ $i }}</td>
                 <td style="word-wrap: break-word;">{{ $list->name }}</td>
-                <td style="word-wrap: break-word;">{{ $list->module_order }}</td>
+                <!-- <td style="word-wrap: break-word;">{{ $list->module_order }}</td> -->
                 <td style="word-wrap: break-word;">
                   <?php
                     if ($list->path != '') {
@@ -43,6 +47,9 @@
                   <?php } else { ?>
                     <div class="col-md-6" style="text-align: center"><img src="{{URL('/').'/img/noimage.jpg'}}" alt="POI Image" class="form-control" style="height : 58px; width: auto;"></div>
                   <?php } ?>
+                </td>
+                <td>
+                  <a href="{{route('delete_materi', [$list->id])}}" onclick="return confirm('Are you sure want to DELETE this item?')"><button type="button" class="btn btn-danger">DELETE</button></a>
                 </td>
               </tr>
             <?php $i++;endforeach ?>

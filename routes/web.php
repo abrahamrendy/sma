@@ -160,6 +160,9 @@ Route::post('/admin/reject}', 'BackOfficeController@reject_user')->name('reject'
 Route::get('/admin/bukti_bayar', 'BackOfficeController@bukti_bayar')->name('bukti_bayar');
 
 Route::get('/admin/materi', 'BackOfficeController@materi')->name('materi');
+Route::get('/admin/materi/add', 'BackOfficeController@add_materi')->name('add_materi');
+Route::post('/admin/materi/add/submit', 'BackOfficeController@submit_materi')->name('submit_materi');
+Route::get('/admin/materi/delete/{id}', 'BackOfficeController@delete_materi')->name('delete_materi');
 
 
 Route::get('download/akte/{file_name}', function($file_name = null)

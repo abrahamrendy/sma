@@ -160,4 +160,34 @@ class BackOfficeController extends Controller
         $materi = DB::table('modul')->orderBy('id', 'desc')->get();
         return view('admin.materi', compact('materi'));
     }
+
+    public function add_materi(){
+        return view('admin.addMateri');
+    }
+
+    public function submit_materi(Request $request) {
+        $name = strip_tags($request->input('name'));
+        if ($request->hasFile('modul')){
+            $photoname = $request->input('name').'_MODUL';
+            $addPhoto = $photoname.'.'.$request->file('modul')->getClientOriginalExtension();
+            $modul = Storage::putFileAs('modul', $request->file('modul'), $addPhoto);
+        } else {
+            $modul = '';
+        }
+
+        $id = DB::table('modul')->insertGetId(
+                                            [
+                                                'name' => $name,
+                                                'path' => $modul,
+                                                'created_at' => date("Y-m-d H:i:s")
+                                            ]
+                                        );
+
+        return redirect()->route('materi')->with('addProduct', 'Module successfully updated!');
+    }
+
+    public function delete_materi ($id) {
+        DB::table('modul')->where('id',$id)->delete();
+        return redirect()->route('materi')->with('addProduct', 'Module successfully deleted!');
+    }
 }
