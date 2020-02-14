@@ -25,6 +25,8 @@ Route::get('/register/{output?}', 'HomeController@register')->name('register');
 Route::post('/register_submit', 'HomeController@register_submit')->name('register_submit');
 Route::get('/confirmation/{output?}', 'HomeController@confirm_payment')->name('confirm_payment');
 Route::post('/confirmation_submit', 'HomeController@submit_confirm_payment')->name('submit_confirm_payment');
+Route::get('/upload/{output?}', 'HomeController@upload_document')->name('upload_document');
+Route::post('/upload_submit', 'HomeController@submit_upload_document')->name('submit_upload_document');
 Route::post('/contactus_submit', 'HomeController@contactus_submit');
 Route::get('/aboutus', 'HomeController@aboutus');
 Route::get('/lecturers', 'HomeController@aboutus');
@@ -156,6 +158,7 @@ Route::get('/admin/edit/{id}/{page?}', 'BackOfficeController@edit')->name('regis
 Route::post('/admin/submit_edit}', 'BackOfficeController@submit_edit')->name('submit_edit');
 Route::post('/admin/approve}', 'BackOfficeController@approve_user')->name('approve');
 Route::post('/admin/reject}', 'BackOfficeController@reject_user')->name('reject');
+Route::get('/admin/delete/{id}', 'BackOfficeController@delete_user')->name('delete_user');
 
 Route::get('/admin/bukti_bayar', 'BackOfficeController@bukti_bayar')->name('bukti_bayar');
 

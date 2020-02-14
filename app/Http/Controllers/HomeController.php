@@ -178,6 +178,7 @@ class HomeController extends Controller
         
     }
 
+
     public function submit_confirm_payment(Request $request) {
 
         $output = array(
@@ -219,6 +220,100 @@ class HomeController extends Controller
         
 
         return $this->confirm_payment($output);
+    }
+
+    public function upload_document($output = array())
+    {
+        if ($output == null) {
+            return view('header', ['registerflag' => true])->withTitle('Document Upload - KATARTIZO Mission Academy').
+                view('upload_document').
+                view('footer');    
+        } else {
+            return view('header', ['registerflag' => true])->withTitle('Document Upload - KATARTIZO Mission Academy').
+                view('upload_document', ['output' => $output]).
+                view('footer');
+        }
+        
+    }
+
+    public function submit_upload_document(Request $request) {
+
+        $output = array(
+            'info' => 'error',
+            'message' => 'Unable to contact us. Please try again later.',
+            'code' => 'x' 
+            );
+
+        $fullname = strip_tags($request->input('firstname'));
+        $email = strip_tags($request->input('email'));
+        $arrName = explode(' ', $fullname);
+        $name = $arrName[0];
+        $isExist = DB::table('contactus')
+                                        ->where([
+                                                    ['name', 'like', '%'.$name.'%'],
+                                                    ['email', '=', $email]
+                                                ])
+                                        ->first();
+
+        if ($isExist) {
+        
+            $akte = '';
+            $ktp = '';
+            $ijazah = '';
+            $pasfoto = '';
+
+            if ($request->hasFile('akte')){
+                $photoname = $request->input('firstname').'_AKTE';
+                $addPhoto = $photoname.'.'.$request->file('akte')->getClientOriginalExtension();
+                $akte = Storage::putFileAs('akte', $request->file('akte'), $addPhoto);
+            } else {
+                $akte = $isExist->akte;
+            }
+
+            if ($request->hasFile('ktp')){
+                $photoname = $request->input('firstname').'_KTP';
+                $addPhoto = $photoname.'.'.$request->file('ktp')->getClientOriginalExtension();
+                $ktp = Storage::putFileAs('ktp', $request->file('ktp'), $addPhoto);
+            } else {
+                $ktp = $isExist->ktp;
+            }
+
+            if ($request->hasFile('ijazah')){
+                $photoname = $request->input('firstname').'_IJAZAH';
+                $addPhoto = $photoname.'.'.$request->file('ijazah')->getClientOriginalExtension();
+                $ijazah = Storage::putFileAs('ijazah', $request->file('ijazah'), $addPhoto);
+            } else {
+                $ijazah = $isExist->ijazah;
+            }
+
+            if ($request->hasFile('pasfoto')){
+                $photoname = $request->input('firstname').'_PASFOTO';
+                $addPhoto = $photoname.'.'.$request->file('pasfoto')->getClientOriginalExtension();
+                $pasfoto = Storage::putFileAs('pasfoto', $request->file('pasfoto'), $addPhoto);
+            } else {
+                $pasfoto = $isExist->pasfoto;
+            }
+
+            $update = array(
+                'akte' => $akte,
+                'ktp' => $ktp,
+                'ijazah' => $ijazah,
+                'pasfoto' => $pasfoto,
+            );
+
+            DB::table('contactus')->where('id',$isExist->id)->update($update);
+            $output['message'] = "Success";
+            $output['code'] = '0';
+
+            
+
+        } else {   # user not created
+            $output['message'] = "Unable to process your message. Please try again later.";
+            $output['code'] = '3';
+        }
+        
+
+        return $this->upload_document($output);
     }
 
     /**

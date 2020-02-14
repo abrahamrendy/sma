@@ -54,9 +54,9 @@
               <td>
                 <a href="{{route('registrant_details', [$list->id,0])}}"><button type="button" class="btn btn-primary">Details</button></a>
                 <a href="{{route('registrant_edit', [$list->id,0])}}"><button type="button" class="btn btn-primary">Edit</button></a>
-                <hr style="border-color: #a7a5a5" class="hidden">
-                <div class="poi_handler hidden">
-                  <a href="#"><button type="button" class="btn btn-success approve-btn" data-id = "{{$list->id}}">APPROVE</button></a>
+                <hr style="border-color: #a7a5a5">
+                <div class="poi_handler">
+                  <a href="{{route('delete_user', [$list->id])}}" onclick="return confirm('Are you sure want to DELETE this item?')"><button type="button" class="btn btn-danger" data-id = "{{$list->id}}" >DELETE</button></a>
                 </div>
               </td>
             </tr>

@@ -148,6 +148,11 @@ class BackOfficeController extends Controller
         return 1;
     }
 
+    public function delete_user ($id) {
+        DB::table('contactus')->where('id',$id)->delete();
+        return redirect()->route('bo')->with('addProduct', 'User successfully deleted!');
+    }
+
 
 
     public function bukti_bayar()

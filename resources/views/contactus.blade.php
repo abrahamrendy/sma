@@ -272,6 +272,10 @@
                 </div>
 
                 <a class="slider_btn hvr-icon-up" href="{{ url('/confirmation') }}" style="margin-top: 50px; font-size: 20px;">Payment Confirmation<i class="fa fa-check-circle hvr-icon" style="margin-left: 15px;"></i></a> 
+                <br>
+                <a class="slider_btn hvr-icon-up" href="{{ url('/upload') }}" style="margin-top: 50px; font-size: 20px;">Upload Kelengkapan Dokumen<i class="fa fa-file hvr-icon" style="margin-left: 15px;"></i></a> 
+
+                
               </div>
             </form>
           <?php } ?>

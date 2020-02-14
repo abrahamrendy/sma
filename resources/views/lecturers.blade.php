@@ -1,8 +1,29 @@
   <style type="text/css">
     .price_nav.aboutusleadershipteam > li {
       margin-bottom: 5%;
+      cursor: pointer;
     }
   </style>
+
+  <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Start About Us slider section -->
   <section id="sliderSection" class="homepageslider">            
@@ -28,9 +49,9 @@
             <div class="pricearea homepagetopics">
               <ul class="price_nav aboutusleadershipteam" style="float: left; width: 100%">
                 <!-- Static Contents -->
-                <li data-aos="zoom-in-right">
-                  <img src="{{ URL::to('/') }}/img/LADTeam/Toni A.JPG" alt="img">
-                  <h2>Pdt. Dr. Tonny Andrian, M.Th.</h2>
+                <li data-aos="zoom-in-right" data-toggle="modal" data-target="#exampleModal">
+                    <img src="{{ URL::to('/') }}/img/LADTeam/Toni A.JPG" alt="img">
+                    <h2>Pdt. Dr. Tonny Andrian, M.Th.</h2>
                 </li>
                 <li data-aos="zoom-in-right">
                   <img src="{{ URL::to('/') }}/img/LADTeam/ko ivan.jpg" alt="img">
